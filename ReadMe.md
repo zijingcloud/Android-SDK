@@ -4,7 +4,7 @@ Android-SDK是紫荆云平台Android端SDK。Android-SDK可以帮助您快速搭
 
 ## 问题反馈
 
-* 任何关于SDK的问题，您可以在Issues中反馈。
+* 任何关于SDK的问题，您可以在[Issues](https://github.com/zijingcloud/Android-SDK/issues/new)中反馈。
 
 ## SDK使用
 
