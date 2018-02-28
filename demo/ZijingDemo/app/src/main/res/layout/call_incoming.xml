@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/topLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/hj_img_bg">
+
+    <ImageView
+        android:id="@+id/call_in_avatar"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:src="@mipmap/hz_icon_huiyishi"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"/>
+    <TextView
+        android:id="@+id/call_in_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/call_in_avatar"
+        android:textColor="#FFFFFF"
+        android:singleLine="true"
+        android:textSize="32sp"
+        android:layout_marginTop="30dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="邀请您视频通话..."
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:layout_below="@+id/call_in_name"
+        android:layout_marginTop="20dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+
+        <ImageView
+            android:id="@+id/call_in_hang_up"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/bh_guaduan"/>
+        <ImageView
+            android:id="@+id/call_in_accept_audio"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/bh_jieting"
+            android:layout_marginLeft="0.5dp"/>
+
+    </LinearLayout>
+</RelativeLayout>

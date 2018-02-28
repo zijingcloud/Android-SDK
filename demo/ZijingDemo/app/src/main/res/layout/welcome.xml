@@ -4,28 +4,34 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <Button
-        android:id="@+id/join"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:text="入会" />
-
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:columnCount="2">
+        
+        <Button
+            android:id="@+id/login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="登录"/>
 
+        <Button
+            android:id="@+id/join"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="入会" />
+        
         <TextView
             android:text="服务器："
             android:textSize="18sp" />
 
         <EditText
             android:id="@+id/domain"
-            android:layout_width="300dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:hint="请输入服务器地址"
-            android:text="cs.zijingcloud.com" />
+            android:text="@string/domain" />
 
         <TextView
             android:text="显示名："
@@ -33,10 +39,10 @@
 
         <EditText
             android:id="@+id/displayName"
-            android:layout_width="300dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:hint="请输入显示名称"
-            android:text="android_sdk_test" />
+            android:text="" />
 
         <TextView
             android:text="呼叫地址："
@@ -44,10 +50,10 @@
 
         <EditText
             android:id="@+id/address"
-            android:layout_width="300dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:hint="请输入会议号"
-            android:text="1061" />
+            android:text="@string/address" />
 
         <TextView
             android:text="呼叫密码："
@@ -55,10 +61,10 @@
 
         <EditText
             android:id="@+id/pwd"
-            android:layout_width="300dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:hint="请输入密码"
-            android:text="" />
+            android:text="@string/pwd" />
 
         <TextView
             android:text="上行分辨率："

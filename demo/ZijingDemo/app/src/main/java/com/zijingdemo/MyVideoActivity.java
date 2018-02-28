@@ -11,6 +11,7 @@ import com.zjrtc.ZjVideoActivity;
 
 /**
  * Created by wangzhen on 2017/12/6.
+ * 自定义会中界面
  */
 
 public class MyVideoActivity extends ZjVideoActivity {
