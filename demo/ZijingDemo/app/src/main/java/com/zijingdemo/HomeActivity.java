@@ -2,6 +2,7 @@ package com.zijingdemo;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
@@ -65,6 +66,9 @@ public class HomeActivity extends Activity implements View.OnClickListener{
         manager.setDisplayName(displayName.getText().toString());
         manager.setAddress(address.getText().toString());
         manager.setPwd(pwd.getText().toString());   //有密码则需要设置，没有密码不需要设置
+        //使用[手机型号]+[显示名称]组合的MD5，相同则认为是同一个参会者，后入者会顶掉上一个的画面
+        String info = MD5Util.MD5(Build.MODEL+displayName.getText().toString());
+        manager.setCheckDup(info);
 
         int up_w = 0,up_h = 0,down_w = 0,down_h = 0,up_fps = 0,down_fps = 0,up_bw = 0,down_bw = 0;
         if (!TextUtils.isEmpty(upWidth.getText().toString())){

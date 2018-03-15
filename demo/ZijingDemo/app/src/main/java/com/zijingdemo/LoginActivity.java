@@ -7,6 +7,7 @@ import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -99,10 +100,21 @@ public class LoginActivity extends Activity {
                     @Override
                     public void onResponse(Call call, Response response) throws IOException {
                         if (response.code() == 200){
-                            Log.i(TAG, "onResponse: 登录成功");
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Toast.makeText(LoginActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
+                                }
+                            });
                             finish();
                         }else{
                             Log.e(TAG, "onResponse: "+response.code());
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Toast.makeText(LoginActivity.this, "登录失败", Toast.LENGTH_SHORT).show();
+                                }
+                            });
                         }
                     }
                 }
