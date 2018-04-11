@@ -237,6 +237,10 @@ startActivity(new Intent(this,ZjVideoActivity.class));
 
 设置呼叫地址所需要的密码。
 
+#### setHideMe(boolean hideMe)
+
+设置是否隐身入会。
+
 ## 通话管理
 
 ### ZjVideoManager
