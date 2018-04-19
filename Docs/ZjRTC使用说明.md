@@ -4,7 +4,7 @@
 
 1.	复制`zjrtc.aar`包到`app的libs`目录下；
 
-2.	复制`node_modules`到工程根目录下；
+2.	复制`maven`到工程根目录下；
 
 3.	修改`工程`下的`build.gradle`文件：
 
@@ -15,7 +15,7 @@
         repositories {
             jcenter()
             maven {
-                url "$rootDir/node_modules/react-native/android"
+                url "$rootDir/maven"
             }
         }
     }
