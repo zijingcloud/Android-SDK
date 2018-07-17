@@ -143,11 +143,6 @@ ZjVideoPreferences prefs = new ZjVideoPreferences(this);
 当设备为TV/盒子时，需调用此方法。
 参数为true 为TV/盒子，false为手机；默认值为false。
 
-#### setCheckDup(String checkDup)
-
-用于检查重复参会者。
-入会时会检查同一会议室中是否已存在同名且checkDup值一样的参会者，如果存在则入会，并将同名参会者踢出会议。checkDup是一个30位以上长度的字符串，一般用MD5 Hash生成（32位）。
-
 ## 通话界面
 
 ### 自定义通话界面
@@ -161,8 +156,12 @@ ZjVideoPreferences prefs = new ZjVideoPreferences(this);
     prefs.setHideRNUI(true);
     ```
 
-2. 新建`ZjVideoActivity`的子类，作为你的通话界面。
-
+2. 新建`ZjVideoActivity`的子类，作为你的通话界面。子类Activiy需要在AndroidManifest.xml中配置一下进程属性：
+ 
+    ```
+    android:process=":zjvideo"
+    ```
+    
 3. 重写其中的`onCreate()`方法，在onCreate()中调用`addContentView()`方法添加子界面。
 
     代码示例：
@@ -201,27 +200,29 @@ ZjVideoPreferences prefs = new ZjVideoPreferences(this);
 
 ### 呼叫说明
 
-每次呼叫，需要调用ZjVideoManager设置显示名、呼叫地址、密码(有密码则需要设置)，然后跳转至通话界面ZjVideoActivity或其子类。
-
-***注意：***
-
-* 每次呼叫，都需要使用ZjVideoManager.getInstance()获取ZjVideoManager对象实例，在对话结束后此对象会被销毁。
+每次呼叫，需要new一个ZjCall的对象，设置显示名、呼叫地址、密码(有密码则需要设置)、用户登录账号（如果已经登录则需要设置）、checkdup、是否隐身入会，然后跳转至通话界面ZjVideoActivity或其子类，把ZjCall的实例传过去。
 
 示例：
 
 ```
-//设置服务器地址、显示名称、呼叫地址、呼叫密码；
-ZjVideoManager.getInstance().setDisplayName("");
-ZjVideoManager.getInstance().setAddress("");
-ZjVideoManager.getInstance().setPwd("");//没有密码不用设置
-startActivity(new Intent(this,ZjVideoActivity.class));
-//跳转至自定义通话界面 MyVideoActivity
-//startActivity(new Intent(this,MyVideoActivity.class));
+//构建呼叫参数类，设置显示名称、呼叫地址、呼叫密码、是否隐身入会；
+ZjCall call = new ZjCall();
+call.setDisplayName(displayName.getText().toString());
+call.setAddress(address.getText().toString());
+call.setPwd(pwd.getText().toString());
+call.setAccount("liuyingjie@zijingcloud.com");
+call.setCheckDup(MD5Util.MD5(Build.MODEL+displayName.getText().toString()));
+call.setHideMe(false);
+
+//启动手机会中界面,把呼叫参数传过去
+Intent intent = new Intent(this,MyVideoActivity.class);
+intent.putExtra("call",call);
+startActivity(intent);
 ```
 
-### ZjVideoManager
+### ZjCall
 
-在通话建立前，可调用ZjVideoManager进行呼叫参数设置。
+在通话建立前，可调用ZjCall进行呼叫参数设置。
 
 方法如下：
 
@@ -237,6 +238,15 @@ startActivity(new Intent(this,ZjVideoActivity.class));
 
 设置呼叫地址所需要的密码。
 
+#### setAccount(tring account)
+
+设置用户账号（如果登录了，就得设置）
+
+#### setCheckDup(String checkDup)
+
+用于检查重复参会者。
+入会时会检查同一会议室中是否已存在同名且checkDup值一样的参会者，如果存在则入会，并将同名参会者踢出会议。checkDup是一个30位以上长度的字符串，一般用MD5 Hash生成（32位）。
+
 #### setHideMe(boolean hideMe)
 
 设置是否隐身入会。
@@ -245,7 +255,7 @@ startActivity(new Intent(this,ZjVideoActivity.class));
 
 ### ZjVideoManager
 
-在通话过程中，可调用ZjVideoManager进行结束通话、关闭麦克风等其他操作。
+在通话过程中，可调用ZjVideoManager进行结束通话、关闭麦克风等其他操作。注意：必须保证在进程“你的项目报名:zjvideo”如“com.zijingdemo:zjvideo”中调用ZjVideoManager操作才能生效（ZjVideoActivity的子类或者配置了android:process=":zjvideo"的安卓四大组件中调用）
 
 #### disconnect()
 
