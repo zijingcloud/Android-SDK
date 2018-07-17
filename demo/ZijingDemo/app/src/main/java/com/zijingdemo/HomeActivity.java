@@ -9,8 +9,8 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 
+import com.zjrtc.ZjCall;
 import com.zjrtc.ZjVideoActivity;
-import com.zjrtc.ZjVideoManager;
 import com.zjrtc.ZjVideoPreferences;
 
 /**
@@ -61,14 +61,14 @@ public class HomeActivity extends Activity implements View.OnClickListener{
     }
 
     private void joinMeet() {
-        //设置服务器地址、显示名称、呼叫地址、呼叫密码；每次呼叫都需要进行设置
-        ZjVideoManager manager = ZjVideoManager.getInstance();
-        manager.setDisplayName(displayName.getText().toString());
-        manager.setAddress(address.getText().toString());
-        manager.setPwd(pwd.getText().toString());   //有密码则需要设置，没有密码不需要设置
-        //使用[手机型号]+[显示名称]组合的MD5，相同则认为是同一个参会者，后入者会顶掉上一个的画面
-        String info = MD5Util.MD5(Build.MODEL+displayName.getText().toString());
-        manager.setCheckDup(info);
+        //构建呼叫参数类，设置显示名称、呼叫地址、呼叫密码、是否隐身入会；
+        ZjCall call = new ZjCall();
+        call.setDisplayName(displayName.getText().toString());
+        call.setAddress(address.getText().toString());
+        call.setPwd(pwd.getText().toString());
+        call.setAccount("liuyingjie@zijingcloud.com");
+        call.setCheckDup(MD5Util.MD5(Build.MODEL+displayName.getText().toString()));
+        call.setHideMe(false);
 
         int up_w = 0,up_h = 0,down_w = 0,down_h = 0,up_fps = 0,down_fps = 0,up_bw = 0,down_bw = 0;
         if (!TextUtils.isEmpty(upWidth.getText().toString())){
@@ -104,28 +104,19 @@ public class HomeActivity extends Activity implements View.OnClickListener{
         prefs.setVideoFps(up_fps,down_fps);
 
         //其他功能
-//        prefs.setSoftCode(true);      //关闭硬编解，使用软编解
 //        prefs.setPrintLogs(true);     //打印日志
-//        ZjVideoManager.getInstance().addZjCallListener(new ZjCallListenerBase(){
-//            @Override
-//            public void videoState(String state) {
-//                super.videoState(state);
-//                Log.i(TAG, "videoState: "+state );
-//            }
-//
-//            @Override
-//            public void callState(String state, String info) {
-//                super.callState(state, info);
-//                Log.i(TAG, "callState: "+state+"  "+info);
-//            }
-//        });
+        prefs.setSoftCode(false);      //关闭硬编解，使用软编解
+//        prefs.setHideRNUI(false);    //隐藏UI
 
-//        prefs.setHideRNUI(false);
-        startActivity(new Intent(this,ZjVideoActivity.class));//启动手机会中界面
+        boolean isTv = true;
+//        boolean isTv = false;
+        prefs.setTvSupport(isTv);
 
-        //如果需要使用自定义通话界面
-//        prefs.setHideRNUI(true);
-//        startActivity(new Intent(this,MyVideoActivity.class));//启动自定义会中界面
+
+        //启动手机会中界面,把呼叫参数传过去
+        Intent intent = new Intent(this,MyVideoActivity.class);
+        intent.putExtra("call",call);
+        startActivity(intent);
 
     }
 }

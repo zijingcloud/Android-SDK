@@ -51,8 +51,12 @@ dependencies {
     compile 'com.android.support:support-v4:25.3.1'
     testCompile 'junit:junit:4.12'
     //添加aar包
-    compile(name: 'zjrtc-v1.9.1', ext: 'aar')
-    compile 'com.facebook.react:react-native:+'
+    compile(name: 'zjrtc-v1.9.5', ext: 'aar')
+    compile 'com.facebook.react:react-native:0.44.3'
     compile 'cn.jiguang.sdk:jpush:3.1.1'
     compile 'cn.jiguang.sdk:jcore:1.1.9'
+
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
 }

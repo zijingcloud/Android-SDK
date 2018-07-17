@@ -6,7 +6,8 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
 
     <string name="domain">cs.zijingcloud.com</string>
-    <string name="address"></string>
-    <string name="pwd"></string>
+    <!--<string name="domain">cs.lalonline.cn</string>-->
+    <string name="address">1865</string>
+    <string name="pwd">123456</string>
 
 </resources>

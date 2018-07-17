@@ -42,7 +42,7 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:hint="请输入显示名称"
-            android:text="" />
+            android:text="ZjAndroid" />
 
         <TextView
             android:text="呼叫地址："
@@ -77,14 +77,14 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:hint="宽(可选)"
-                android:text="640" />
+                android:text="1280" />
 
             <EditText
                 android:id="@+id/up_height"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:hint="高(可选)"
-                android:text="360" />
+                android:text="720" />
         </LinearLayout>
 
         <TextView
@@ -98,14 +98,14 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:hint="宽(可选)"
-                android:text="640" />
+                android:text="1280" />
 
             <EditText
                 android:id="@+id/down_height"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:hint="高(可选)"
-                android:text="360" />
+                android:text="720" />
         </LinearLayout>
 
         <TextView
@@ -117,7 +117,7 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:hint="(可选)"
-            android:text="800" />
+            android:text="1200" />
 
         <TextView
             android:text="下行速率："
@@ -128,7 +128,7 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:hint="(可选)"
-            android:text="800" />
+            android:text="1200" />
 
 
         <TextView

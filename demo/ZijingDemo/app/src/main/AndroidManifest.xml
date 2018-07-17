@@ -18,8 +18,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.zijingdemo.MyVideoActivity">
-        </activity>
+        <activity
+            android:name="com.zijingdemo.MyVideoActivity"
+            android:process=":zjvideo"/>
 
         <activity android:name=".LoginActivity">
         </activity>
