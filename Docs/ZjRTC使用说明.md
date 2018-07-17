@@ -222,7 +222,7 @@ startActivity(intent);
 
 ### ZjCall
 
-在通话建立前，可调用ZjCall进行呼叫参数设置。
+在通话建立前，需要new一个ZjCall的对象进行呼叫参数设置。
 
 方法如下：
 
