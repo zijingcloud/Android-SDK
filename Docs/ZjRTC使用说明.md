@@ -277,6 +277,10 @@ startActivity(intent);
 
 切换摄像头。
 
+#### exchangeView()
+
+交换远端窗口和本地窗口的位置。
+
 #### openSpeaker(Context context,boolean on)
 
 打开/关闭系统扬声器。(建立通话前调用)
