@@ -277,11 +277,15 @@ startActivity(intent);
 
 切换摄像头。
 
+#### callOut(String destination, String protocol, String role)
+
+外呼方法，destination:外呼地址，protocol:协议(如：‘sip’,'h.323')，role:角色('host','guest')
+
 #### exchangeView()
 
 交换远端窗口和本地窗口的位置。
 
-#### openSpeaker(Context context,boolean on)
+#### openSpeaker(Context context, boolean on)
 
 打开/关闭系统扬声器。(建立通话前调用)
 
