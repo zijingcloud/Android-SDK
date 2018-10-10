@@ -104,14 +104,13 @@ public class HomeActivity extends Activity implements View.OnClickListener{
         prefs.setVideoFps(up_fps,down_fps);
 
         //其他功能
-//        prefs.setPrintLogs(true);     //打印日志
+        prefs.setPrintLogs(true);     //打印日志
         prefs.setSoftCode(false);      //关闭硬编解，使用软编解
 //        prefs.setHideRNUI(false);    //隐藏UI
 
         boolean isTv = true;
 //        boolean isTv = false;
         prefs.setTvSupport(isTv);
-
 
         //启动手机会中界面,把呼叫参数传过去
         Intent intent = new Intent(this,MyVideoActivity.class);

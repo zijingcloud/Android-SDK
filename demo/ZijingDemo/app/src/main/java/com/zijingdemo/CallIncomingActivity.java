@@ -17,6 +17,7 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.zjrtc.ZjCall;
 import com.zjrtc.ZjVideoActivity;
 import com.zjrtc.ZjVideoManager;
 
@@ -77,9 +78,11 @@ public class CallIncomingActivity extends AppCompatActivity implements View.OnCl
     };
 
     private void answer() {
-        ZjVideoManager manager = ZjVideoManager.getInstance();
-        manager.setMsgJson(msgJson);
-        startActivity(new Intent(this, ZjVideoActivity.class));
+        ZjCall call = new ZjCall();
+        call.setMsgJson(msgJson);
+        Intent intent = new Intent(this,ZjVideoActivity.class);
+        intent.putExtra("call",call);
+        startActivity(intent);
     }
 
     private void decline(ZjInComingCall inComingCall) {

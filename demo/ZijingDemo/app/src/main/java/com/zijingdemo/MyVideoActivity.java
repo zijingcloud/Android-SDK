@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.zjrtc.ZjCallListenerBase;
@@ -26,6 +27,14 @@ public class MyVideoActivity extends ZjVideoActivity {
         ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT);
         addContentView(view, params);
+
+        Button btnExchange = (Button) findViewById(R.id.btn_exchange);
+        btnExchange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ZjVideoManager.getInstance().exchangeView();
+            }
+        });
 
         ZjVideoManager.getInstance().addZjCallListener(new ZjCallListenerBase(){
             @Override

@@ -22,7 +22,7 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:hint="请输入账号"
-            android:text=""/>
+            android:text="liuyingjie@zijingcloud.com"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:hint="请输入密码"
             android:inputType="textPassword"
-            android:text=""/>
+            android:text="lyj@2018"/>
     </GridLayout>
 
     <Button
