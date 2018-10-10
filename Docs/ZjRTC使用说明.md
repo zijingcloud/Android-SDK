@@ -247,6 +247,10 @@ startActivity(intent);
 用于检查重复参会者。
 入会时会检查同一会议室中是否已存在同名且checkDup值一样的参会者，如果存在则入会，并将同名参会者踢出会议。checkDup是一个30位以上长度的字符串，一般用MD5 Hash生成（32位）。
 
+#### setMsgJson(String msgJson)
+
+设置被呼接收到的json消息
+
 #### setHideMe(boolean hideMe)
 
 设置是否隐身入会。
