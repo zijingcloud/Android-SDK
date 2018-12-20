@@ -8,7 +8,7 @@ Android-SDK是紫荆云平台Android端SDK。Android-SDK可以帮助您快速搭
 
 ## SDK使用
 
-参见《ZjRTC使用说明.pdf》文档。
+参见《ZJRTCSDK说明文档》文档。
 
 ## API
 
