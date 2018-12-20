@@ -4,10 +4,13 @@
 
 - [一、集成SDK](#一集成sdk) 
 
-    - [1. 复制`zjrtc.aar`包到`app`的`libs`下](#1-复制zjrtcaar包到app的libs下)           
-    - [2. 修改`app`下的`build.gradle`文件](#2-修改app下的buildgradle文件)        
+    - [1. 复制`zjrtc.aar`包到`app`的`libs`下](#1-复制zjrtcaar包到app的libs下)  
+
+    - [2. 修改`app`下的`build.gradle`文件](#2-修改app下的buildgradle文件)  
+
+    - [3. 在项目跟目录的`build.gradle`加入](#3-在项目跟目录的build.gradle加入)        
      
-    -  [3.SDK初始化](#3sdk初始化)   
+    - [4. SDK初始化](#4sdk初始化)   
 
 - [二、参数设置](#二参数设置)            
      
@@ -93,8 +96,18 @@
     }
 
     ```
+#### 3.在项目跟目录的`build.gradle`加入
 
-#### 3.SDK初始化
+    ```
+    allprojects {
+       repositories {
+          jcenter()
+          maven { url 'https://jitpack.io' }
+       }
+    }
+    ```
+
+#### 4.SDK初始化
 
 	```
     public class MyApplication extends Application {
