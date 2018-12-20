@@ -10,15 +10,6 @@ Android-SDK是紫荆云平台Android端SDK。Android-SDK可以帮助您快速搭
 
 参见《ZJRTCSDK说明文档》文档。
 
-## Github说明
-
-Android-SDK有三个branch：
-
-master分支：开发提交的最新版本，不稳定。
-
-ReactNative：通过react native实现的sdk版本。
-
-Native：通过纯native实现的sdk版本。
-
-建议优先使用ReactNative或者Native分支的最新Tag稳定版本。
+## 版本说明
+请优先使用Tag中的最新版本，master分支代码供体验新接口及测试使用。
 
