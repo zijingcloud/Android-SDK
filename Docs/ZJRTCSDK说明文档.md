@@ -32,7 +32,7 @@
 
     ```
 
-#### 3.SDK初始化
+#### 3.SDK初始化
 
 	```
     public class MyApplication extends Application {
@@ -93,7 +93,7 @@ ZJRTCPreferences prefs = new ZJRTCPreferences(this);
 
 #### setVideoSize(int videoWidth, int videoHeight)
 
-设置发送/接收视频分辨率，发送接收一致。
+设置发送/接收视频分辨率，发送接收一致。
 
 #### setVideoSize(int upVideoWidth, int upVideoHeight, int downVideoWidth, int downVideoHeight)
 
@@ -105,7 +105,7 @@ ZJRTCPreferences prefs = new ZJRTCPreferences(this);
 
 #### setPreviewVideoFps(int fps)
 
-设置本地预览视频的帧率。
+设置本地预览视频的帧率。
 
 #### setVideoFps(int fps)
 
@@ -113,11 +113,11 @@ ZJRTCPreferences prefs = new ZJRTCPreferences(this);
 
 #### setVideoFps(int upFps, int downFps)
 
-分别设置发送/接收视频的帧率。（其中接收视频帧率在全编全解模式下生效）
+分别设置发送/接收视频的帧率。（其中接收视频帧率在全编全解模式下生效）
 
 #### setSmallVideFps(int fps)
 
-设置发送小视频的帧率。（设置发送多流后生效）
+设置发送小视频的帧率。（设置发送多流后生效）
 
 #### setSimulcast(boolean simulcast)
 
@@ -125,11 +125,11 @@ ZJRTCPreferences prefs = new ZJRTCPreferences(this);
 
 #### setMultistream(boolean multistream)
 
-设置是否发送多流。true发送一大一小两个视频流，false只发送一个大视频流。
+设置是否发送多流。true发送一大一小两个视频流，false只发送一个大视频流。
 
 #### setEnableH264HardwareEncoder(boolean enableH264HardwareEncoder)
 
-设置是否使用H264硬编。
+设置是否使用H264硬编。
 
 #### setDisableH264hHardwareDecoder(boolean disableH264hHardwareDecoder)
 
@@ -137,9 +137,9 @@ ZJRTCPreferences prefs = new ZJRTCPreferences(this);
 
 ## 三、建立通话
 
-建立通话前需要创建一个Call的对象，然后跳转到通话界面，并把call对象传过去，即可建立通话。
+建立通话前需要创建一个Call的对象，然后跳转到通话界面，并把call对象传过去，即可建立通话。
 
-### Call类方法说明
+### Call类方法说明
 
 #### setChanel(String chanel)
 
@@ -151,7 +151,7 @@ ZJRTCPreferences prefs = new ZJRTCPreferences(this);
 
 #### setNickname(String nickname)
 
-设置显示名称
+设置显示名称
 
 #### setAccount(String account)
 
@@ -163,13 +163,13 @@ ZJRTCPreferences prefs = new ZJRTCPreferences(this);
 
 #### setClayout(String clayout)
 
-转发模式下，控制接收大小视频流的数量。如"1:4"表示接收一个大流和四个小流。
+转发模式下，控制接收大小视频流的数量。如"1:4"表示接收一个大流和四个小流。
 
 #### setHideMe(boolean hideMe)
 
 设置隐身入会
 
-#### setHost(boolean host)
+#### setHost(boolean host)
 
 设置是否是主持人
 
@@ -183,12 +183,12 @@ ZJRTCPreferences prefs = new ZJRTCPreferences(this);
 
 #### setMsgJson(String msgJson)
 
-点对点被呼时。设置推送的消息的json字符串
+点对点被呼时。设置推送的消息的json字符串
 
 ### 1.加入会议
 
 ```
-//创建call对象、设置呼叫参数
+//创建call对象、设置呼叫参数
 Call call = new Call();
 call.setChanel(etAddress.getText().toString());
 call.setPassword(etPwd.getText().toString());
@@ -222,7 +222,7 @@ call.setAccount(etAccount.getText().toString());
 call.setNickname(etMyName.getText().toString());
 call.setCallOut(true);
 
-//跳转到点对点界面
+//跳转到点对点界面
 Intent intent = new Intent(this, ZJVideoP2PActivity.class);
 intent.putExtra("call",call);
 startActivity(intent);
@@ -344,7 +344,7 @@ App收到消息后，可根据消息内容来实现接听和拒接功能。
 
 ### 接听
 
-被呼后接听，解析json，构建呼叫参数类call，并跳转到相应的通话界面。
+被呼后接听，解析json，构建呼叫参数类call，并跳转到相应的通话界面。
 
 ### 拒接
 
@@ -364,11 +364,11 @@ token为接收消息的token字段。
 
 ## 五、自定义通话界面
 
-ZJRTCSDK提供了全编全解、转发、点对点通话三种情况下的通话界面：
+ZJRTCSDK提供了全编全解、转发、点对点通话三种情况下的通话界面：
 
 `ZJVideoActivity`、`ZJVideoSimulcastActivity`、`ZJVideoP2PActivity`。
 
-用户也可以自己开发通话界面。使用`ZJRTC`类完成通话中的所有功能。
+用户也可以自己开发通话界面。使用`ZJRTC`类完成通话中的所有功能。
 
 ### `ZJRTC`类接口说明
 
@@ -380,11 +380,11 @@ token为接收消息的token字段。
  ZJRTC zjrtc = new ZJRTC(this);
 ```
 
-### 2.参数设置方法（建立呼叫连接前调用）
+### 2.参数设置方法（建立呼叫连接前调用）
 
 #### setZJRTCListener(ZJRTCListener listener)（必需）
 
-设置会中监听，回调会议室、与会者、视频view等信息。
+设置会中监听，回调会议室、与会者、视频view等信息。
 
 #### listener回调方法说明：
 
@@ -392,9 +392,9 @@ token为接收消息的token字段。
     public interface ZJRTCListener {
 	    //本地视频回调
         void onLocalVideo(String uuid,ZJRTCView view);
-	    //全编全解远端视频回调
+	    //全编全解远端视频回调
         void onRemoteVideo(String uuid,ZJRTCView view);
-	    //转发远端视频回调
+	    //转发远端视频回调
         void onAddView(String uuid, ZJRTCView view);
         //转发远端视频退出
         void onRemoveView(String uuid, ZJRTCView view);
@@ -402,13 +402,13 @@ token为接收消息的token字段。
         void onLocalStream(String uuid, String streamURL);
         //远端视频流回调
         void onRemoteStream(String uuid, String streamURL);
-        //新增与会者
+        //新增与会者
         void onAddParticipant(Participant participant);
         //与会者退出
         void onRemoveParticipant(String uuid);
-        //与会者更新
+        //与会者更新
         void onUpdateParticipant(Participant participant);
-        //与会者声音列表回调 Stage的vad字段有两种取值：0为没有讲话 100为正在讲话
+        //与会者声音列表回调 Stage的vad字段有两种取值：0为没有讲话 100为正在讲话
         void onStageVoice(List<Stage> stages);
 	    //接收到消息
         void onChatMessage(String uuid, String message);
@@ -416,7 +416,7 @@ token为接收消息的token字段。
         void onDisconnect(String reason);
         //双流状态回调
         void onPresentation(boolean isActive, String uuid);
-	    //双流图片地址回调
+	    //双流图片地址回调
         void onPresentationReload(String url);
         //布局更新回调
         void onLayoutUpdate(String layout, String hostLayout, String guestLayout);
@@ -426,13 +426,13 @@ token为接收消息的token字段。
         void onRecordState(boolean isActive);
         //直播状态回调
         void onLiveState(boolean isActive);
-        //自己角色更新
+        //自己角色更新
         void onRoleUpdate(String role);
         //会议室状态更新
         void onConferenceUpdate(ConferenceStatus status);
     }
     ```
-可创建`ZJRTCListenerImpl`监听部分回调
+可创建`ZJRTCListenerImpl`监听部分回调
 
     ```
 	ZJRTCListener listener = new ZJRTCListenerImpl() {
@@ -443,11 +443,11 @@ token为接收消息的token字段。
     ```
 #### setApiServer(String apiServer)
 
-设置api服务器，优先级高于偏好设置，如果不设置则为偏好设置值。
+设置api服务器，优先级高于偏好设置，如果不设置则为偏好设置值。
 
 #### setLivingRecorderServer(String livingRecorderServer)
 
-设置录制直播服务器，优先级高于偏好设置，如果不设置则为偏好设置值。
+设置录制直播服务器，优先级高于偏好设置，如果不设置则为偏好设置值。
 
 #### setAccount(String account)
 
@@ -482,11 +482,11 @@ token为接收消息的token字段。
 ```
 #### setClayout(String clayout)
 
-转发模式下，控制接收大小视频流的数量。如"1:4"表示接收一个大流和四个小流。
+转发模式下，控制接收大小视频流的数量。如"1:4"表示接收一个大流和四个小流。
 
 #### setTime(String time)
 
-被呼时设置接收到的消息中的呼叫时间。
+被呼时设置接收到的消息中的呼叫时间。
 
 #### setBsskey(String bsskey)
 
@@ -494,13 +494,13 @@ token为接收消息的token字段。
 
 #### setOneTimeToken(String oneTimeToken)
 
-被呼时设置接收到的消息中的token。
+被呼时设置接收到的消息中的token。
 
-### 3.建立连接方法
+### 3.建立连接方法
 
 #### connect(String chanel, String password, String nickname, CallBack callBack)
 
-建立连接,示例代码如下：
+建立连接,示例代码如下：
 
     ```
         zjrtc.setZJRTCListener(listener);
@@ -526,9 +526,9 @@ token为接收消息的token字段。
 
 ### 4.获取信息接口
 
-#### getParticipantList()
+#### getParticipantList()
 
-获取与会者列表。
+获取与会者列表。
 
 #### isVMR()
 
@@ -550,7 +550,7 @@ token为接收消息的token字段。
 
 #### disconnectAll()
 
-结束会议。
+结束会议。
 
 #### setConferenceLock(boolean setting)
 
@@ -562,7 +562,7 @@ token为接收消息的token字段。
 
 #### setParticipantMute(String uuid, boolean setting)
 
-静音/取消静音某人。
+静音/取消静音某人。
 
 #### setParticipantVideoMute(String uuid, boolean setting)
 
@@ -586,11 +586,11 @@ token为接收消息的token字段。
 
 #### setParticipantRole(String uuid, String role)
 
-修改某人角色，role值："chair"为主持人 "guest"为访客。
+修改某人角色，role值："chair"为主持人 "guest"为访客。
 
 #### setLayout(String layout, String glayout)
 
-设置布局。 layout为主持人布局，glayout为访客布局
+设置布局。 layout为主持人布局，glayout为访客布局
 
 取值："1:0","4:0","1:7","1:21","2:21"
 
@@ -600,7 +600,7 @@ token为接收消息的token字段。
 
 #### muteVideo(boolean enable)
 
-静音/取消静音。（关掉麦克风，自己说话别人听不到）
+静音/取消静音。（关掉麦克风，自己说话别人听不到）
 
 #### muteAudio(boolean enable)
 
@@ -612,7 +612,7 @@ token为接收消息的token字段。
 
 #### dialOut(String destination, String protocol, String displayName, String role)
 
-外呼。 destination：呼叫地址；protocol：协议；displayName：设置被呼人显示名字；role：角色（"chair","guest"）；
+外呼。 destination：呼叫地址；protocol：协议；displayName：设置被呼人显示名字；role：角色（"chair","guest"）；
 
 #### switchLiving(boolean enable)
 
