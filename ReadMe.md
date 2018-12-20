@@ -18,7 +18,7 @@ master分支：开发提交的最新版本，不稳定。
 
 ReactNative：通过react native实现的sdk版本。
 
-Native：通过纯native实现的sdk。
+Native：通过纯native实现的sdk版本。
 
 建议优先使用ReactNative或者Native分支的最新Tag稳定版本。
 
