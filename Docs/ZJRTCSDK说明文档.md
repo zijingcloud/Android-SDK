@@ -76,7 +76,14 @@
     ```
     android {
 
-        ...
+        defaultConfig {
+
+            ...
+
+            ndk {
+                abiFilters "armeabi-v7a", "x86"
+            }
+        }
 
    	    compileOptions {
 	        sourceCompatibility JavaVersion.VERSION_1_8
@@ -93,6 +100,7 @@
 	    implementation 'org.java-websocket:Java-WebSocket:1.3.9'
 	    implementation 'com.google.code.gson:gson:2.8.5'
 	    implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.2.3'
+        implementation 'com.github.barteksc:pdfium-android:1.7.0'
     }
 
     ```
@@ -668,6 +676,10 @@ ZJRTCSDK提供了全编全解、转发、点对点通话三种情况下的通话
 设置布局。 layout为主持人布局，glayout为访客布局
 
 取值："1:0","4:0","1:7","1:21","2:21"
+
+#### getCameraDevices()
+
+获取摄像头列表。
 
 #### switchCamera()
 
