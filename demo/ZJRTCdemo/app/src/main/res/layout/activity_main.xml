@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="登录"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:text="设置"
+            android:onClick="openSetting"/>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#AAAAAA"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="加入会议"
+        android:textColor="#0000FF"/>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2">
+
+        <TextView
+            android:text="呼叫地址："
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/et_address"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:hint="请输入会议号"
+            android:text="2216" />
+
+        <TextView
+            android:text="呼叫密码："
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/et_pwd"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:hint="请输入密码"
+            android:text="123456" />
+
+        <TextView
+            android:text="显示名称："
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:hint="显示名"
+            android:text="王富贵" />
+
+    </GridLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="入会"
+        android:onClick="joinConference"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#AAAAAA"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="点对点呼叫"
+        android:textColor="#0000FF"/>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2">
+
+        <TextView
+            android:text="呼叫短号："
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/et_sipkey"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:hint="请输入会议号"
+            android:text="5606" />
+
+        <TextView
+            android:text="对方名称："
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/et_call_name"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="刘英杰" />
+
+        <TextView
+            android:text="自己账号："
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/et_account"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:hint="不设置为匿名呼叫"
+            android:text="lizhipeng@zijingcloud.com" />
+
+        <TextView
+            android:text="显示名称："
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/et_my_name"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:hint="显示名"
+            android:text="李志鹏" />
+
+    </GridLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="呼叫"
+        android:onClick="p2pCall"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#AAAAAA"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="自定义通话界面"
+        android:onClick="startSelfUI"/>
+
+</LinearLayout>

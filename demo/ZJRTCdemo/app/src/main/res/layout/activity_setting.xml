@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SettingActivity">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="api服务器："
+            android:textSize="18sp"/>
+
+        <EditText
+            android:id="@+id/et_apiServer"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="cs.lalonline.cn"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="录制直播服务器："
+            android:textSize="18sp"/>
+
+        <EditText
+            android:id="@+id/et_liveRecordServer"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="living.myvmr.cn"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="预览分辨率帧率："
+            android:textSize="18sp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/et_preview_w"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="1280" />
+
+            <EditText
+                android:id="@+id/et_preview_h"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="720" />
+
+            <EditText
+                android:id="@+id/et_preview_f"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="20" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="上行分辨率帧率："
+            android:textSize="18sp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/et_up_w"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="640" />
+
+            <EditText
+                android:id="@+id/et_up_h"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="360" />
+
+            <EditText
+                android:id="@+id/et_up_f"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="20" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="下行分辨率帧率："
+            android:textSize="18sp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/et_down_w"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="640" />
+
+            <EditText
+                android:id="@+id/et_down_h"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="360" />
+
+            <EditText
+                android:id="@+id/et_down_f"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="20" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="小流分辨率帧率："
+            android:textSize="18sp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/et_small_w"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="320" />
+
+            <EditText
+                android:id="@+id/et_small_h"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="180" />
+
+            <EditText
+                android:id="@+id/et_small_f"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="20" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="上行带宽："
+            android:textSize="18sp"/>
+
+        <EditText
+            android:id="@+id/et_up_bw"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="800" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="下行带宽："
+            android:textSize="18sp"/>
+
+        <EditText
+            android:id="@+id/et_down_bw"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="800" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="小流带宽："
+            android:textSize="18sp"/>
+
+        <EditText
+            android:id="@+id/et_small_bw"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="150" />
+
+        <LinearLayout
+            android:layout_height="40dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="收多流："
+                android:textSize="18sp"/>
+
+            <Switch
+                android:id="@+id/s_recv_stream"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="40dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="发多流："
+                android:textSize="18sp"/>
+
+            <Switch
+                android:id="@+id/s_send_stream"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="注意："
+                android:textColor="#ff0000"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="修改以下两个设置保存后\n需要重启应用才能生效！"/>
+
+        </LinearLayout>
+
+        <LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="40dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="h264硬编："
+                android:textSize="18sp"/>
+
+            <Switch
+                android:id="@+id/s_enable_h264_encoder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="40dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="禁用h264硬解："
+                android:textSize="18sp"/>
+
+            <Switch
+                android:id="@+id/s_disable_h264_decoder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </GridLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="保存"
+        android:onClick="save"/>
+
+</LinearLayout>
