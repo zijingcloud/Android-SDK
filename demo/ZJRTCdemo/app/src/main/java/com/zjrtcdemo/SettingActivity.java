@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.Switch;
 import android.widget.Toast;
 
@@ -20,7 +21,9 @@ public class SettingActivity extends AppCompatActivity {
             ,etSmallW,etSmallH,etSmallF
             ,etUpBw,etDownBw,etSmallBw;
 
-    private Switch sRecv,sSend,sEnableH264Encoder,sDisableH264Decoder;
+    private Switch sRecv,sSend,sEnableH264Encoder,sDisableH264Decoder,sPrintLogs;
+
+    private RadioButton rbAuto,rbEnabled,rbDisabled;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +56,10 @@ public class SettingActivity extends AppCompatActivity {
         sSend = findViewById(R.id.s_send_stream);
         sEnableH264Encoder = findViewById(R.id.s_enable_h264_encoder);
         sDisableH264Decoder = findViewById(R.id.s_disable_h264_decoder);
+        sPrintLogs = findViewById(R.id.s_print_logs);
+        rbAuto = findViewById(R.id.rb_auto);
+        rbEnabled = findViewById(R.id.rb_enabled);
+        rbDisabled = findViewById(R.id.rb_disabled);
     }
 
     private void initData() {
@@ -78,6 +85,18 @@ public class SettingActivity extends AppCompatActivity {
         sSend.setChecked(prefs.isMultistream());
         sEnableH264Encoder.setChecked(prefs.isEnableH264HardwareEncoder());
         sDisableH264Decoder.setChecked(prefs.isDisableH264hHardwareDecoder());
+        sPrintLogs.setChecked(prefs.isPrintLogs());
+        switch (prefs.getSpeakerphone()) {
+            case "auto":
+                rbAuto.setChecked(true);
+                break;
+            case "true":
+                rbEnabled.setChecked(true);
+                break;
+            case "false":
+                rbDisabled.setChecked(true);
+                break;
+        }
     }
 
     public void save(View view) {
@@ -116,6 +135,17 @@ public class SettingActivity extends AppCompatActivity {
         prefs.setMultistream(sSend.isChecked());
         prefs.setEnableH264HardwareEncoder(sEnableH264Encoder.isChecked());
         prefs.setDisableH264hHardwareDecoder(sDisableH264Decoder.isChecked());
+        prefs.setPrintLogs(sPrintLogs.isChecked());
+
+        String speakerphone = "auto";
+        if (rbAuto.isChecked()) {
+            speakerphone = "auto";
+        } else if (rbEnabled.isChecked()) {
+            speakerphone = "true";
+        } else if (rbDisabled.isChecked()) {
+            speakerphone = "false";
+        }
+        prefs.setSpeakerphone(speakerphone);
 
         Toast.makeText(this,"保存成功！",Toast.LENGTH_SHORT).show();
 

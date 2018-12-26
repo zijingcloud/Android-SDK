@@ -218,6 +218,14 @@ ZJRTCPreferences prefs = new ZJRTCPreferences(this);
 
 设置是否禁用H264硬解。
 
+#### setSpeakerphone(String speakerphone)
+
+设置扬声器，true打开、false关闭、autu自动。
+
+#### setPrintLogs(boolean printLogs)
+
+设置是否打印日志。
+
 ## 三、建立通话
 
 建立通话前需要创建一个Call的对象，然后跳转到通话界面，并把call对象传过去，即可建立通话。
@@ -560,7 +568,7 @@ ZJRTCSDK提供了全编全解、转发、点对点通话三种情况下的通话
         picture,        //发送图片
         screen,         //屏幕
         recvOnly,       //只接受音视频
-        recvOnlyVideo   //只接收视频
+        recvOnlyVideo   //只接收视频
     }
 ```
 #### setClayout(String clayout)
