@@ -505,10 +505,14 @@ ZJRTCSDK提供了全编全解、转发、点对点通话三种情况下的通话
         void onChatMessage(String uuid, String message);
         //被服务器断开
         void onDisconnect(String reason);
+        //call（媒体呼叫、双流、屏幕共享）被断开
+        void onCallDisconnect(String reason);
         //双流状态回调
         void onPresentation(boolean isActive, String uuid);
 	    //双流图片地址回调
         void onPresentationReload(String url);
+        //屏幕共享状态回调
+        void onScreenShareState(boolean isActive);
         //布局更新回调
         void onLayoutUpdate(String layout, String hostLayout, String guestLayout);
         //布局更新与会者顺序回调
@@ -521,6 +525,8 @@ ZJRTCSDK提供了全编全解、转发、点对点通话三种情况下的通话
         void onRoleUpdate(String role);
         //会议室状态更新
         void onConferenceUpdate(ConferenceStatus status);
+        //错误回调
+        void onError(ErrorCode error,String description);
     }
     ```
 可创建`ZJRTCListenerImpl`监听部分回调
@@ -637,7 +643,19 @@ ZJRTCSDK提供了全编全解、转发、点对点通话三种情况下的通话
 
 获取音视频参数。
 
+#### getCameraDevices()
+
+获取可用摄像头列表。
+
 ### 5.控制接口
+
+#### reconnectNewSessionCall()
+
+重连（信令和媒体连接都断开，相当于重新入会）。
+
+#### reconnectOnlyMediaCall()
+
+重连（只断开媒体连接并重连）。
 
 #### disconnectAll()
 
@@ -685,13 +703,13 @@ ZJRTCSDK提供了全编全解、转发、点对点通话三种情况下的通话
 
 取值："1:0","4:0","1:7","1:21","2:21"
 
-#### getCameraDevices()
-
-获取摄像头列表。
-
 #### switchCamera()
 
 切换摄像头。
+
+#### switchCamera(String deviceName)
+
+切换指定摄像头。
 
 #### muteVideo(boolean enable)
 
