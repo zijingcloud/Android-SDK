@@ -170,9 +170,13 @@ ZJRTCPreferences prefs = new ZJRTCPreferences(this);
 
 设置小流视频的带宽。（设置发送多流后生效）
 
-#### setPreviewVideoSize(int videoWidth, int videoHeight)
+#### setBandwidthScreen(int bandwidth)
 
-设置本地预览视频的分辨率。
+设置屏幕共享视频的带宽。
+
+#### setCaptureVideoSize(int videoWidth, int videoHeight)
+
+设置摄像头capture分辨率。
 
 #### setVideoSize(int videoWidth, int videoHeight)
 
@@ -186,9 +190,13 @@ ZJRTCPreferences prefs = new ZJRTCPreferences(this);
 
 设置发送小视频的分辨率。（设置发送多流后生效）
 
-#### setPreviewVideoFps(int fps)
+#### setCaptureScreenVideoSize(int videoWidth, int videoHeight)
 
-设置本地预览视频的帧率。
+设置屏幕共享视频的capture分辨率
+
+#### setCaptureVideoFps(int fps)
+
+设置摄像头capture的帧率。
 
 #### setVideoFps(int fps)
 
@@ -201,6 +209,22 @@ ZJRTCPreferences prefs = new ZJRTCPreferences(this);
 #### setSmallVideFps(int fps)
 
 设置发送小视频的帧率。（设置发送多流后生效）
+
+#### setMaxVideoFps(int fps)
+
+设置视频最大帧率。
+
+#### setCaptureScreenVideoFps(int fps)
+
+设置屏幕共享视频capture帧率。
+
+#### setScreenVideoFps(int fps)
+
+设置屏幕共享视频上行帧率。
+
+#### setMaxScreenVideoFps(int fps)
+
+设置屏幕共享视频最大上行帧率。
 
 #### setSimulcast(boolean simulcast)
 
@@ -702,6 +726,10 @@ ZJRTCSDK提供了全编全解、转发、点对点通话三种情况下的通话
 设置布局。 layout为主持人布局，glayout为访客布局
 
 取值："1:0","4:0","1:7","1:21","2:21"
+
+#### updateClayout(String clayout)
+
+会中动态更新clayout。控制接收视频流的数量和大小。
 
 #### switchCamera()
 
