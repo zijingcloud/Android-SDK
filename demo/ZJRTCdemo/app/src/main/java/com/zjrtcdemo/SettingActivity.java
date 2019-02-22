@@ -15,13 +15,16 @@ public class SettingActivity extends AppCompatActivity {
     ZJRTCPreferences prefs;
 
     private EditText etApiServer,etLiveRecordServer
-            ,etPreviewW,etPreviewH,etPreviewF
+            ,etCaptureW,etCaptureH,etCaptureF
             ,etUpW,etUpH,etUpF
             ,etDownW,etDownH,etDownF
             ,etSmallW,etSmallH,etSmallF
-            ,etUpBw,etDownBw,etSmallBw;
+            ,etUpBw,etMaxF,etDownBw,etSmallBw
+            ,etScreenCaptureW,etScreenCaptureH,etScreenCaptureF
+            ,etScreenUpW,etScreenUpH,etScreenUpF
+            ,etScreenBw,etScreenMaxF;
 
-    private Switch sRecv,sSend,sEnableH264Encoder,sDisableH264Decoder,sPrintLogs;
+    private Switch sShiTong,sRecv,sSend,sEnableH264Encoder,sDisableH264Decoder,sDisableCameraEncoder,sPrintLogs;
 
     private RadioButton rbAuto,rbEnabled,rbDisabled;
 
@@ -35,11 +38,12 @@ public class SettingActivity extends AppCompatActivity {
     }
 
     private void initView() {
+        sShiTong = findViewById(R.id.s_shitong);
         etApiServer = findViewById(R.id.et_apiServer);
         etLiveRecordServer = findViewById(R.id.et_liveRecordServer);
-        etPreviewW = findViewById(R.id.et_preview_w);
-        etPreviewH = findViewById(R.id.et_preview_h);
-        etPreviewF = findViewById(R.id.et_preview_f);
+        etCaptureW = findViewById(R.id.et_capture_w);
+        etCaptureH = findViewById(R.id.et_capture_h);
+        etCaptureF = findViewById(R.id.et_capture_f);
         etUpW = findViewById(R.id.et_up_w);
         etUpH = findViewById(R.id.et_up_h);
         etUpF = findViewById(R.id.et_up_f);
@@ -50,12 +54,22 @@ public class SettingActivity extends AppCompatActivity {
         etSmallH = findViewById(R.id.et_small_h);
         etSmallF = findViewById(R.id.et_small_f);
         etUpBw = findViewById(R.id.et_up_bw);
+        etMaxF = findViewById(R.id.et_max_f);
         etDownBw = findViewById(R.id.et_down_bw);
         etSmallBw = findViewById(R.id.et_small_bw);
+        etScreenCaptureW = findViewById(R.id.et_screen_capture_w);
+        etScreenCaptureH = findViewById(R.id.et_screen_capture_h);
+        etScreenCaptureF = findViewById(R.id.et_screen_capture_f);
+        etScreenUpW = findViewById(R.id.et_screen_up_w);
+        etScreenUpH = findViewById(R.id.et_screen_up_h);
+        etScreenUpF = findViewById(R.id.et_screen_up_f);
+        etScreenBw = findViewById(R.id.et_screen_bw);
+        etScreenMaxF = findViewById(R.id.et_screen_max_f);
         sRecv = findViewById(R.id.s_recv_stream);
         sSend = findViewById(R.id.s_send_stream);
         sEnableH264Encoder = findViewById(R.id.s_enable_h264_encoder);
         sDisableH264Decoder = findViewById(R.id.s_disable_h264_decoder);
+        sDisableCameraEncoder = findViewById(R.id.s_disable_camera_encoder);
         sPrintLogs = findViewById(R.id.s_print_logs);
         rbAuto = findViewById(R.id.rb_auto);
         rbEnabled = findViewById(R.id.rb_enabled);
@@ -64,11 +78,12 @@ public class SettingActivity extends AppCompatActivity {
 
     private void initData() {
         prefs = new ZJRTCPreferences(this);
+        sShiTong.setChecked(prefs.isShiTongPlatform());
         etApiServer.setText(prefs.getApiServer());
         etLiveRecordServer.setText(prefs.getLivingRecorderServer());
-        etPreviewW.setText(String.valueOf(prefs.getVideoWidthPreview()));
-        etPreviewH.setText(String.valueOf(prefs.getVideoHeightPreview()));
-        etPreviewF.setText(String.valueOf(prefs.getFpsPreview()));
+        etCaptureW.setText(String.valueOf(prefs.getVideoWidthCapture()));
+        etCaptureH.setText(String.valueOf(prefs.getVideoHeightCapture()));
+        etCaptureF.setText(String.valueOf(prefs.getFpsCapture()));
         etUpW.setText(String.valueOf(prefs.getVideoWidthUp()));
         etUpH.setText(String.valueOf(prefs.getVideoHeightUP()));
         etUpF.setText(String.valueOf(prefs.getFpsUp()));
@@ -79,12 +94,22 @@ public class SettingActivity extends AppCompatActivity {
         etSmallH.setText(String.valueOf(prefs.getVideoHeightSmall()));
         etSmallF.setText(String.valueOf(prefs.getFpsSmall()));
         etUpBw.setText(String.valueOf(prefs.getBandwidthUp()));
+        etMaxF.setText(String.valueOf(prefs.getFpsMax()));
         etDownBw.setText(String.valueOf(prefs.getBandwidthDown()));
         etSmallBw.setText(String.valueOf(prefs.getBandwidthSmall()));
+        etScreenCaptureW.setText(String.valueOf(prefs.getVideoScreenWidthCapture()));
+        etScreenCaptureH.setText(String.valueOf(prefs.getVideoScreenHeightCapture()));
+        etScreenCaptureF.setText(String.valueOf(prefs.getFpsScreenCapture()));
+        etScreenUpW.setText(String.valueOf(prefs.getVideoScreenWidthUp()));
+        etScreenUpH.setText(String.valueOf(prefs.getVideoScreenHeightUp()));
+        etScreenUpF.setText(String.valueOf(prefs.getFpsScreenUp()));
+        etScreenBw.setText(String.valueOf(prefs.getBandwidthScreen()));
+        etScreenMaxF.setText(String.valueOf(prefs.getFpsScreenMax()));
         sRecv.setChecked(prefs.isSimulcast());
         sSend.setChecked(prefs.isMultistream());
         sEnableH264Encoder.setChecked(prefs.isEnableH264HardwareEncoder());
         sDisableH264Decoder.setChecked(prefs.isDisableH264hHardwareDecoder());
+        sDisableCameraEncoder.setChecked(prefs.isDisableCameraEncoder());
         sPrintLogs.setChecked(prefs.isPrintLogs());
         switch (prefs.getSpeakerphone()) {
             case "auto":
@@ -100,14 +125,15 @@ public class SettingActivity extends AppCompatActivity {
     }
 
     public void save(View view) {
+        prefs.setShiTongPlatform(sShiTong.isChecked());
         prefs.setApiServer(etApiServer.getText().toString());
         prefs.setLivingRecorderServer(etLiveRecordServer.getText().toString());
 
-        prefs.setPreviewVideoSize(
-                Integer.parseInt(etPreviewW.getText().toString()),
-                Integer.parseInt(etPreviewH.getText().toString()));
+        prefs.setCaptureVideoSize(
+                Integer.parseInt(etCaptureW.getText().toString()),
+                Integer.parseInt(etCaptureH.getText().toString()));
 
-        prefs.setPreviewVideoFps(Integer.parseInt(etPreviewF.getText().toString()));
+        prefs.setCaptureVideoFps(Integer.parseInt(etCaptureF.getText().toString()));
 
         prefs.setVideoSize(
                 Integer.parseInt(etUpW.getText().toString()),
@@ -123,18 +149,37 @@ public class SettingActivity extends AppCompatActivity {
                 Integer.parseInt(etSmallW.getText().toString()),
                 Integer.parseInt(etSmallH.getText().toString()));
 
-        prefs.setSmallVideFps(Integer.parseInt(etSmallF.getText().toString()));
+        prefs.setSmallVideoFps(Integer.parseInt(etSmallF.getText().toString()));
 
         prefs.setBandwidth(
                 Integer.parseInt(etUpBw.getText().toString()),
                 Integer.parseInt(etDownBw.getText().toString()));
 
+        prefs.setMaxVideoFps(Integer.parseInt(etMaxF.getText().toString()));
+
         prefs.setBandwidthSmall(Integer.parseInt(etSmallBw.getText().toString()));
+
+        prefs.setCaptureScreenVideoSize(
+                Integer.parseInt(etScreenCaptureW.getText().toString()),
+                Integer.parseInt(etScreenCaptureH.getText().toString()));
+
+        prefs.setCaptureScreenVideoFps(Integer.parseInt(etScreenCaptureF.getText().toString()));
+
+        prefs.setScreenVideoSize(
+                Integer.parseInt(etScreenUpW.getText().toString()),
+                Integer.parseInt(etScreenUpH.getText().toString()));
+
+        prefs.setScreenVideoFps(Integer.parseInt(etScreenUpF.getText().toString()));
+
+        prefs.setBandwidthScreen(Integer.parseInt(etScreenBw.getText().toString()));
+
+        prefs.setMaxScreenVideoFps(Integer.parseInt(etScreenMaxF.getText().toString()));
 
         prefs.setSimulcast(sRecv.isChecked());
         prefs.setMultistream(sSend.isChecked());
         prefs.setEnableH264HardwareEncoder(sEnableH264Encoder.isChecked());
         prefs.setDisableH264hHardwareDecoder(sDisableH264Decoder.isChecked());
+        prefs.setDisableCameraEncoder(sDisableCameraEncoder.isChecked());
         prefs.setPrintLogs(sPrintLogs.isChecked());
 
         String speakerphone = "auto";

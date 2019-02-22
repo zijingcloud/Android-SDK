@@ -150,6 +150,10 @@ ZJRTCPreferences prefs = new ZJRTCPreferences(this);
 
 ### 其他方法说明
 
+#### setShiTongPlatform(boolean isShiTongPlatform)
+
+设置是否对接视通平台。true为视通平台，false为云视平台。
+
 #### setApiServer(String apiServer)（必需）
 
 设置服务器地址，必需设置项，没有设置将导致呼叫失败。
@@ -241,6 +245,10 @@ ZJRTCPreferences prefs = new ZJRTCPreferences(this);
 #### setDisableH264hHardwareDecoder(boolean disableH264hHardwareDecoder)
 
 设置是否禁用H264硬解。
+
+#### setDisableCameraEncoder(boolean disableCameraEncoder)
+
+设置是否禁用摄像头编码器，默认为true。
 
 #### setSpeakerphone(String speakerphone)
 

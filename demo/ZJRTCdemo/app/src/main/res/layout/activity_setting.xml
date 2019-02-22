@@ -19,6 +19,17 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="对接视通："
+                android:textSize="18sp"/>
+
+            <Switch
+                android:id="@+id/s_shitong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="api服务器："
                 android:textSize="18sp"/>
 
@@ -43,7 +54,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="预览分辨率帧率："
+                android:text="capture分辨率帧率："
                 android:textSize="18sp"/>
 
             <LinearLayout
@@ -51,19 +62,19 @@
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/et_preview_w"
+                    android:id="@+id/et_capture_w"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
                     android:text="1280" />
 
                 <EditText
-                    android:id="@+id/et_preview_h"
+                    android:id="@+id/et_capture_h"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
                     android:text="720" />
 
                 <EditText
-                    android:id="@+id/et_preview_f"
+                    android:id="@+id/et_capture_f"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
                     android:text="20" />
@@ -163,14 +174,26 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="上行带宽："
+                android:text="上行带宽和最大帧率："
                 android:textSize="18sp"/>
 
-            <EditText
-                android:id="@+id/et_up_bw"
-                android:layout_width="60dp"
-                android:layout_height="wrap_content"
-                android:text="800" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/et_up_bw"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="800" />
+
+                <EditText
+                    android:id="@+id/et_max_f"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="800" />
+
+            </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -195,6 +218,90 @@
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:text="150" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="屏幕共享\ncapture分辨率帧率："
+                android:textSize="18sp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/et_screen_capture_w"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="320" />
+
+                <EditText
+                    android:id="@+id/et_screen_capture_h"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="180" />
+
+                <EditText
+                    android:id="@+id/et_screen_capture_f"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="20" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="屏幕共享\n上行分辨率帧率："
+                android:textSize="18sp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/et_screen_up_w"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="320" />
+
+                <EditText
+                    android:id="@+id/et_screen_up_h"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="180" />
+
+                <EditText
+                    android:id="@+id/et_screen_up_f"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="20" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="屏幕共享\n带宽和最大帧率："
+                android:textSize="18sp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/et_screen_bw"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="600" />
+
+                <EditText
+                    android:id="@+id/et_screen_max_f"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="15" />
+
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_height="40dp">
@@ -285,11 +392,11 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="打印日志："
+                    android:text="禁用camera解码器："
                     android:textSize="18sp"/>
 
                 <Switch
-                    android:id="@+id/s_print_logs"
+                    android:id="@+id/s_disable_camera_encoder"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
@@ -297,6 +404,17 @@
 
             <LinearLayout
                 android:layout_height="40dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="打印日志："
+                    android:textSize="18sp"/>
+
+                <Switch
+                    android:id="@+id/s_print_logs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
 
             </LinearLayout>
 
