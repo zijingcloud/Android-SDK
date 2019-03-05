@@ -8,7 +8,7 @@ Android-SDK是紫荆云平台Android端SDK。Android-SDK可以帮助您快速搭
 
 ## SDK使用
 
-参见[《ZJRTCSDK说明文档》](https://github.com/zijingcloud/Android-SDK/blob/master/Docs/ZJRTCSDK说明文档.md)。
+参见[《VCRTCSDK说明文档》](https://github.com/zijingcloud/Android-SDK/blob/master/Docs/VCRTCSDK说明文档.md)。
 
 ## 版本说明
 请优先使用Tag中的最新版本，master分支SDK供体验新接口及测试使用。
