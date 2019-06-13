@@ -17,8 +17,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SettingActivity" />
-        <activity android:name=".MyVideoActivity"></activity>
+        <activity android:name=".SettingActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".CallIncomingActivity" />
+        <activity android:name=".MyVideoActivity" />
+        <receiver
+            android:name=".MyJPushReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTRATION" />
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" />
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" />
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" />
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_CLICK_ACTION" />
+                <action android:name="cn.jpush.android.intent.CONNECTION" />
+
+                <category android:name="${JPUSH_PKGNAME}" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

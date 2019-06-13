@@ -9,7 +9,6 @@ import com.vcrtc.VCRTC;
 import com.vcrtc.VCRTCPreferences;
 import com.vcrtc.VCRTCView;
 import com.vcrtc.callbacks.CallBack;
-import com.vcrtc.entities.ResponseCode;
 import com.vcrtc.listeners.VCRTCListener;
 import com.vcrtc.listeners.VCRTCListenerImpl;
 
@@ -45,7 +44,7 @@ public class MyVideoActivity extends AppCompatActivity {
             }
 
             @Override
-            public void failure(ResponseCode responseCode) {
+            public void failure(String reason) {
 
             }
         });

@@ -19,37 +19,27 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="对接视通："
-                android:textSize="18sp"/>
-
-            <Switch
-                android:id="@+id/s_shitong"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:text="api服务器："
                 android:textSize="18sp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </LinearLayout>
 
             <EditText
                 android:id="@+id/et_apiServer"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:text="cs.lalonline.cn"/>
+                android:text=""/>
 
-            <TextView
+            <Button
+                android:id="@+id/btn_check"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="录制直播服务器："
-                android:textSize="18sp"/>
-
-            <EditText
-                android:id="@+id/et_liveRecordServer"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:text="living.myvmr.cn"/>
+                android:text="校验"
+                android:onClick="check"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -222,7 +212,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="屏幕共享\ncapture分辨率帧率："
+                android:text="双流\ncapture分辨率帧率："
                 android:textSize="18sp"/>
 
             <LinearLayout
@@ -230,19 +220,19 @@
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/et_screen_capture_w"
+                    android:id="@+id/et_presentation_capture_w"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
                     android:text="320" />
 
                 <EditText
-                    android:id="@+id/et_screen_capture_h"
+                    android:id="@+id/et_presentation_capture_h"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
                     android:text="180" />
 
                 <EditText
-                    android:id="@+id/et_screen_capture_f"
+                    android:id="@+id/et_presentation_capture_f"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
                     android:text="20" />
@@ -252,7 +242,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="屏幕共享\n上行分辨率帧率："
+                android:text="双流\n上行分辨率帧率："
                 android:textSize="18sp"/>
 
             <LinearLayout
@@ -260,19 +250,19 @@
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/et_screen_up_w"
+                    android:id="@+id/et_presentation_up_w"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
                     android:text="320" />
 
                 <EditText
-                    android:id="@+id/et_screen_up_h"
+                    android:id="@+id/et_presentation_up_h"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
                     android:text="180" />
 
                 <EditText
-                    android:id="@+id/et_screen_up_f"
+                    android:id="@+id/et_presentation_up_f"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
                     android:text="20" />
@@ -282,7 +272,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="屏幕共享\n带宽和最大帧率："
+                android:text="双流\n带宽和最大帧率："
                 android:textSize="18sp"/>
 
             <LinearLayout
@@ -290,13 +280,13 @@
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/et_screen_bw"
+                    android:id="@+id/et_presentation_bw"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
                     android:text="600" />
 
                 <EditText
-                    android:id="@+id/et_screen_max_f"
+                    android:id="@+id/et_presentation_max_f"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
                     android:text="15" />

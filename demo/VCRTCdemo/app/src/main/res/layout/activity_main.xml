@@ -19,7 +19,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
-                android:text="登录"/>
+                android:text="登录"
+                android:onClick="login"/>
 
             <Button
                 android:layout_width="wrap_content"
@@ -57,7 +58,7 @@
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:hint="请输入会议号"
-                android:text="2207" />
+                android:text="1865" />
 
             <TextView
                 android:text="呼叫密码："
@@ -79,14 +80,15 @@
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:hint="显示名"
-                android:text="刘英杰" />
+                android:text="android" />
 
             <TextView
                 android:text="TV"
                 android:textSize="18sp"/>
 
             <Switch
-                android:id="@+id/s_tv"/>
+                android:id="@+id/s_tv"
+                android:checked="false"/>
 
         </GridLayout>
 

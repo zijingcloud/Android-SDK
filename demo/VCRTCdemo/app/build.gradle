@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId "com.vcrtcdemo"
+        applicationId "com.zijingdemo"
         minSdkVersion 16
         targetSdkVersion 27
         versionCode 1
@@ -12,6 +12,13 @@ android {
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: "com.zijingdemo",
+                JPUSH_APPKEY : "faa244992c1d3d35530e3607",
+                JPUSH_CHANNEL: "developer-default",
+        ]
+        buildConfigField "String", "JPUSH_APP_KEY", '"faa244992c1d3d35530e3607"'
     }
     buildTypes {
         release {
@@ -38,9 +45,11 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
-    implementation(name: 'vcrtc-release', ext: 'aar')
+    implementation 'cn.jiguang.sdk:jpush:3.0.9'
+    implementation 'cn.jiguang.sdk:jcore:1.1.7'
+    implementation(name: 'vcrtc-v4.1.0', ext: 'aar')
     implementation 'com.squareup.okhttp3:okhttp:3.11.0'
-    implementation 'org.java-websocket:Java-WebSocket:1.3.9'
+    implementation 'org.java-websocket:Java-WebSocket:1.4.0'
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.2.3'
     implementation 'com.github.barteksc:pdfium-android:1.7.0'

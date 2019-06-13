@@ -7,6 +7,7 @@ import android.os.Build;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -47,10 +48,14 @@ public class MainActivity extends AppCompatActivity {
         etMyName = findViewById(R.id.et_my_name);
         sTV = findViewById(R.id.s_tv);
 
-        if (Build.VERSION.SDK_INT >= 23){
+        if (Build.VERSION.SDK_INT >= 23) {
             checkPermission();
         }
+    }
 
+    public void login(View view) {
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
     }
 
     public void openSetting(View view) {
@@ -71,11 +76,11 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent;
 
-        if (prefs.isShiTongPlatform()) {
-            intent = new Intent(this, VCVideoShiTongActivity.class);
+        if (sTV.isChecked()) {
+            intent = new Intent(this, VCVideoTVActivity.class);
         } else {
-            if (sTV.isChecked()) {
-                intent = new Intent(this, VCVideoTVActivity.class);
+            if (prefs.isShiTongPlatform()) {
+                intent = new Intent(this, VCVideoShiTongActivity.class);
             } else {
                 if (prefs.isSimulcast()) {
                     intent = new Intent(this, VCVideoSimulcastActivity.class);
@@ -123,8 +128,19 @@ public class MainActivity extends AppCompatActivity {
         }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (!Settings.canDrawOverlays(this)) {
-                Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:" + pkgName));
-                startActivityForResult(intent, OVERLAY_PERMISSION_REQ_CODE);
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);  //先得到构造器
+                builder.setTitle("提示"); //设置标题
+                builder.setMessage("请求悬浮窗权限"); //设置内容
+                //设置确定按钮
+                builder.setPositiveButton("去设置", (dialog, which) -> {
+                    Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:" + pkgName));
+                    startActivityForResult(intent, OVERLAY_PERMISSION_REQ_CODE);
+                    dialog.dismiss(); //关闭dialog
+                });
+                builder.setCancelable(false);
+
+                builder.create();
+                builder.show();
             }
         }
     }

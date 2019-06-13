@@ -97,7 +97,7 @@
     }
     dependencies {
         implementation 'com.squareup.okhttp3:okhttp:3.11.0'
-	    implementation 'org.java-websocket:Java-WebSocket:1.3.9'
+	    implementation 'org.java-websocket:Java-WebSocket:1.4.0'
 	    implementation 'com.google.code.gson:gson:2.8.5'
 	    implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.2.3'
         implementation 'com.github.barteksc:pdfium-android:1.7.0'
@@ -125,6 +125,16 @@
             super.onCreate();
             //初始化SDK
             RTCManager.init(this);
+
+            //以下可不设置，设置是为了出现问题方便服务端定位
+            //设备类型
+            RTCManager.DEVICE_TYPE = "Android";
+            //应用id
+            RTCManager.APPLICATION_ID = BuildConfig.APPLICATION_ID;
+            //应用版本号
+            RTCManager.VERSION_NAME = BuildConfig.VERSION_NAME;
+            //合作伙伴
+            RTCManager.OEM = "oem";
 	    }
 	}
 	```
@@ -150,17 +160,9 @@ VCRTCPreferences prefs = new VCRTCPreferences(this);
 
 ### 其他方法说明
 
-#### setShiTongPlatform(boolean isShiTongPlatform)
+#### setServerAddress(String serverAddress, CallBack callBack)（必需）
 
-设置是否对接视通平台。true为视通平台，false为云视平台。
-
-#### setApiServer(String apiServer)（必需）
-
-设置服务器地址，必需设置项，没有设置将导致呼叫失败。
-
-#### setLivingRecorderServer(String livingRecorderServer);
-
-设置录制直播服务器地址。
+设置服务器地址，必需设置项，没有设置将导致呼叫失败，callBack回调是否设置成功。
 
 #### setBandwidth(int bandwidth)
 
@@ -194,9 +196,9 @@ VCRTCPreferences prefs = new VCRTCPreferences(this);
 
 设置发送小视频的分辨率。（设置发送多流后生效）
 
-#### setCaptureScreenVideoSize(int videoWidth, int videoHeight)
+#### setCapturePresentationVideoSize(int videoWidth, int videoHeight)
 
-设置屏幕共享视频的capture分辨率
+设置发送双流时辅流（屏幕共享、图片h264）视频的capture分辨率
 
 #### setCaptureVideoFps(int fps)
 
@@ -218,17 +220,17 @@ VCRTCPreferences prefs = new VCRTCPreferences(this);
 
 设置视频最大帧率。
 
-#### setCaptureScreenVideoFps(int fps)
+#### setCapturePresentationVideoFps(int fps)
 
-设置屏幕共享视频capture帧率。
+设置发送双流辅流视频capture帧率。
 
 #### setScreenVideoFps(int fps)
 
 设置屏幕共享视频上行帧率。
 
-#### setMaxScreenVideoFps(int fps)
+#### setPresentationMaxVideoFps(int fps)
 
-设置屏幕共享视频最大上行帧率。
+设置发送双流辅流视频最大上行帧率。
 
 #### setSimulcast(boolean simulcast)
 
@@ -253,6 +255,10 @@ VCRTCPreferences prefs = new VCRTCPreferences(this);
 #### setSpeakerphone(String speakerphone)
 
 设置扬声器，true打开、false关闭、autu自动。
+
+#### setImageFilePath(String imageFilePath)
+
+设置关闭摄像头时发送图片的路径
 
 #### setPrintLogs(boolean printLogs)
 
@@ -324,12 +330,18 @@ call.setHost(true);
 VCRTCPreferences prefs = new VCRTCPreferences(this);
 
 Intent intent;
-if (prefs.isSimulcast()) {
-    //跳转到转发模式的界面
-    intent = new Intent(this, VCVideoSimulcastActivity.class);
+
+if (sTV.isChecked()) {
+    //跳转到TV盒子界面
+    intent = new Intent(this, VCVideoTVActivity.class);
 } else {
-    //跳转到全编全解的界面
-    intent = new Intent(this, VCVideoActivity.class);
+    if (prefs.isSimulcast()) {
+        //跳转到转发模式的界面
+        intent = new Intent(this, VCVideoSimulcastActivity.class);
+    } else {
+        //跳转到全编全解的界面
+        intent = new Intent(this, VCVideoActivity.class);
+    }
 }
 intent.putExtra("call",call);
 startActivity(intent);
@@ -352,6 +364,8 @@ startActivity(intent);
 ```
 
 ## 四、被呼功能
+
+可参考demo中的代码实现
 
 移动端被呼功能包括`点对点被呼`，和`会议室邀请被呼`两种场景。
 被呼功能的实现，首先需要在APP上通过接口进行账号登录，登录成功后该账号被呼叫时，服务器端会通过极光推送发送消息给APP，APP可根据收到的消息来建立通话，或调用接口进行拒接。
@@ -513,6 +527,9 @@ VCRTCSDK提供了全编全解、转发、点对点通话三种情况下的通话
 
     ```
     public interface VCRTCListener {
+
+        //视频连接成功回调
+        void onConnected();
 	    //本地视频回调
         void onLocalVideo(String uuid,VCRTCView view);
 	    //全编全解远端视频回调
@@ -600,13 +617,19 @@ VCRTCSDK提供了全编全解、转发、点对点通话三种情况下的通话
 
 ```
     public enum CallType {
-        none,           //不建立音视频连接，用于管理会议场景
-        video,          //建立音视频连接
-        audio,          //只建立音频连接
-        picture,        //发送图片
-        screen,         //屏幕
-        recvOnly,       //只接受音视频
-        recvOnlyVideo   //只接收视频
+        none,                   //不建立音视频连接，用于管理会议场景
+        video,                  //建立音视频连接
+        audio,                  //只建立音频连接
+        recvOnly,               //只接收音视频
+        recvOnlyVideo,          //只接收视频
+        recvAndSendVideo,       //接收音视频并发送视频
+        recvAndSendAudioBitmap, //接收音视频并发送音频和图片h264视频
+        recvAndSendBitmap,      //接收音视频并发送图片h264视频
+        videoFile,              //双流时发送视频文件
+        picture,                //双流时发送图片（上传图片文件）
+        bitmap,                 //双流时发送图片（转h264视频流）
+        screen,                 //双流时共享
+        cast                    //双流时发送投屏视频流（暂未实现）
     }
 ```
 #### setClayout(String clayout)
@@ -637,12 +660,12 @@ VCRTCSDK提供了全编全解、转发、点对点通话三种情况下的通话
         vcrtc.connect("1234", "123456", "王富贵", new CallBack() {
 
             @Override
-            public void success(String response) {
+            public void success(String message) {
 
             }
 
             @Override
-            public void failure(ResponseCode responseCode) {
+            public void failure(String reason) {
 
             }
             
@@ -749,11 +772,19 @@ VCRTCSDK提供了全编全解、转发、点对点通话三种情况下的通话
 
 #### setVideoEnable(boolean enable)
 
-静音/取消静音。（关掉麦克风，自己说话别人听不到）
+静画/取消静画。（别人看不到自己）
+
+#### setVideoEnable(boolean enable, boolean sendImage)
+
+静画/取消静画(sendImage可以控制是否在摄像头关闭时发送一张图片)。（别人看不到自己）
 
 #### setAudioEnable(boolean enable)
 
-静画/取消静画。（别人看不到自己）
+静音/取消静音。（关掉麦克风，自己说话别人听不到）
+
+#### setAudioModelEnable(boolean enable)
+
+打开/关闭语音模式
 
 #### sendChatMessage(String message)
 
@@ -773,11 +804,21 @@ VCRTCSDK提供了全编全解、转发、点对点通话三种情况下的通话
 
 #### sendPresentationImage(File file)
 
-发送双流图片
+发送双流图片（上传文件）
+
+#### sendPresentationImage(Bitmap bitmap)
+
+发送双流图片（h264流）
 
 #### sendPresentationScreen()
 
 发送双流屏幕共享
+
+#### sendPresentationVideo(String videoFilePath)
+
+发送双流视频文件
+
+
 
 #### stopPresentation()
 
