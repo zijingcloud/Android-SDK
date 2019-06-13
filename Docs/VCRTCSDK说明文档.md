@@ -389,13 +389,57 @@ startActivity(intent);
 
 ### 登录
 
-#### 接口描述
+#### 验证账号密码接口
 
-账号登录功能，将账号、设备信息提交至服务器。
+**请求地址：** `https://{serverAddress}/api/v3/app/user/login/verify_user.shtml`
 
-#### 数据定义
+**请求方式：** POST
+**请求参数：**
 
-**请求地址：** `https://domain/api/registrations/<:account>/new_session`
+
+| 参数类别 | 参数名称 | 类型 | 注释 | 说明 |
+| :-: | :-: | :-: | :-: | :-: |
+|   请求参数<br>(Body)  |   account | String | 账号 | 登录的用户账号 |
+|   请求参数<br>(Body)  |   pwd | String | 密码 | 登录的用户密码   |
+|   请求参数<br>(Body)  |   host | String | 服务器地址 | 专属云需要传 |
+|   请求参数<br>(Body)  |   plat_type | String | 端类型 | webrtcand |
+
+**响应参数：**
+
+results参数
+
+| 参数类别 | 参数名称 | 类型 | 注释 | 说明 |
+| :-: | :-: | :-: | :-: | :-: |
+|   响应参数 |   id | int | 主键 | 用户主键编号 |
+|   响应参数  |   account | String | 账号 | 用户登录账号 |
+|   响应参数  |   trueName | String | 名字 | 用户真实姓名 |
+|   响应参数  |   userName | String | 用户地址 | 用户名@服务器地址形式 |
+|   响应参数  |   sipkey | String | 用户短号 | 用户短号，点对点呼叫 |
+|   响应参数  |   session_id | String | sessionId | 专属云在线状态id |
+|   响应参数  |   companyId | String | oemId | 公司id |
+
+示例：
+```
+{
+    "code": "200",
+    "timeStamp": "2018-02-09 15:25:17",
+    "results": {
+        "id": xxxx,
+        "account": "xxxx@xxxx.com",
+        "trueName": "xxxx",
+        "userName": "xxxx@xxxx.com",
+        "sipkey": "xxxx",
+        "session_id": "xxxxxx",
+        "companyId":xx
+    }
+}
+
+```
+
+#### 注册接口
+
+**公有云请求地址：** `https://{mcuHost}/api/registrations/<:account>/new_session`
+**专属云请求地址：** `https://{serverAddress}/api/v3/app/registrations/jpush_token`
 
 account为登录账号，需要对账号进行URL编码。
 URL编码可参考以下代码：
@@ -412,6 +456,7 @@ String accountEncoded = URLEncoder.encode(account, “UTF-8”);
 | :-: | :-: | :-: | :-: | :-: |
 |	请求头部<br>(Header)	|	X-Cloud-<br>Authorization | String | 认证信息 |	用户名和密码的Base64加密字符串；<br>可参考举例说明。 |
 |	请求头部<br>(Header)	|	Authorization | String | 认证信息 | 用户名和密码的Base64加密字符串； |
+|   请求头部<br>(Header)    |   sessionId | String | sessionId | 验证账号密码接口返回的sessionId |
 |	请求参数<br>(Body)	|	device_id | String | 设备id | 格式：极光推送RegistrationID__<br>极光推送APPKEY |
 |	请求参数<br>(Body)	|	device_type | String | 设备类型 | 必须填写android	|
 
@@ -428,6 +473,8 @@ Header举例说明：
 | --- | --- |
 | X-Cloud-Authorization | x-cloud-basic dGVzdDoxMjM0NTY= |
 | Authorization | x-cloud-basic dGVzdDoxMjM0NTY= |
+
+注意：专属云sessionId的有效时间为3分钟，要想长时间保持在线状态，必须调用会管中的长轮询接口，详见《紫荆视通会管API使用说明》
 
 ### 接收消息
 
