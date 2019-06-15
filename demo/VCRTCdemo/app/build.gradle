@@ -47,7 +47,7 @@ dependencies {
 
     implementation 'cn.jiguang.sdk:jpush:3.0.9'
     implementation 'cn.jiguang.sdk:jcore:1.1.7'
-    implementation(name: 'vcrtc-v4.1.0', ext: 'aar')
+    implementation(name: 'vcrtc-v4.1.1', ext: 'aar')
     implementation 'com.squareup.okhttp3:okhttp:3.11.0'
     implementation 'org.java-websocket:Java-WebSocket:1.4.0'
     implementation 'com.google.code.gson:gson:2.8.5'
