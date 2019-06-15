@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## Version 4.1.1
+
+*2019-06-15*
+
+* 去掉了不必要的onError回调
+
 ## Version 4.1.0
 
 *2019-06-13*
