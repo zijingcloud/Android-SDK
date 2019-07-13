@@ -1,3 +1,6 @@
+## SDK开发文档-快速开始
+
+#### 目录
  - [1. 复制 `vcrtc-v*.aar`文件到app的libs下](#1-复制-vcrtc-vaar文件到app的libs下)   
  - [2. 在项目的根目录的`build.gradle`加入以下代码](#2-在项目的根目录的buildgradle加入以下代码)        
  - [3. 修改app下的`build.gradle`文件](#3-修改app下的buildgradle文件)        
@@ -7,17 +10,15 @@
  - [8. 接收回调信息](#8-接收回调信息)        
  - [9. 退出会议](#9-退出会议)
 
-### 快速开始
-
-前提条件：
+#### 前提条件：
 
 * Android SDK API Level >= 16
 * Android Studio 3.0以上版本
 * APP要求Android 4.1或以上设备
 
-##### 1. 复制 `vcrtc-v*.aar`文件到app的libs下
+#### 1. 复制 `vcrtc-v*.aar`文件到app的libs下
 
-##### 2. 在项目的根目录的`build.gradle`加入以下代码
+#### 2. 在项目的根目录的`build.gradle`加入以下代码
 
 ```gradle
 allprojects {
@@ -28,7 +29,7 @@ allprojects {
 }
 ```
 
-##### 3. 修改app下的`build.gradle`文件
+#### 3. 修改app下的`build.gradle`文件
 
 ```java
 android {
@@ -62,7 +63,7 @@ dependencies {
 
 ```
 
-##### 4. 初始化
+#### 4. 初始化
 
 集成完成后需要自定义一个Application，在新建的Application中的onCreate()方法进行SDK初始化，并可以做一些其他操作，然后在manifest文件中指定Application，代码如下：
 
@@ -88,7 +89,7 @@ public class MyApplication extends Application {
 }
 ```
 
-##### 6. 初始化参数设置
+#### 5. 初始化参数设置
 
 通话之前，优先进行偏好设置，包括服务器地址、视频参数及编码、是否打印日志等设置，服务器地址必须设置，其他选项如果不设置，将使用默认值，偏好设置一次即可一直生效，建议在app的设置页面做配置，具体可设置选项详见api列表。
 
@@ -108,7 +109,7 @@ preferences.setServerAddress("服务器地址", new CallBack() {
 preferences.setSimulcast(true);//设置为转发模式
 ```
 
-##### 7. 加入会议（发起呼叫）
+#### 6. 加入会议（发起呼叫）
 
 呼叫前首先要设置回调监听`VCRTCListener`
 
@@ -132,7 +133,7 @@ private void makeCall(){
 }
 ```
 
-##### 8. 接收回调信息
+#### 7. 接收回调信息
 
 连接成功后，视频view或者视频流以及会议室相关状态信息会在回调中返回，开发者可在相关回调中处理业务逻辑以及对视频画面进行展示。**注：有些回调在子线程，做UI刷新操作记得切到主线程**。
 
@@ -184,7 +185,7 @@ VCRTCListener listener = new VCRTCListener() {
 };
 ```
 
-##### 9. 退出会议
+#### 8. 退出会议
 
 ```java
 private void disconnect() {
