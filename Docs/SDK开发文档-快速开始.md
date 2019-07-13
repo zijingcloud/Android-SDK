@@ -1,12 +1,11 @@
-<!-- TOC -->autoauto- [快速开始](#快速开始)auto        
-- [1. 复制 `vcrtc-v*.aar`文件到app的libs下](#1-复制-vcrtc-vaar文件到app的libs下)auto        
-- [2. 在项目的根目录的`build.gradle`加入以下代码](#2-在项目的根目录的buildgradle加入以下代码)auto        
-- [3. 修改app下的`build.gradle`文件](#3-修改app下的buildgradle文件)auto        
-- [4. 初始化](#4-初始化)auto        
-- [6. 初始化参数设置](#6-初始化参数设置)auto        
-- [7. 加入会议（发起呼叫）](#7-加入会议发起呼叫)auto        
-- [8. 接收回调信息](#8-接收回调信息)auto        
-- [9. 退出会议](#9-退出会议)autoauto<!-- /TOC -->
+ - [1. 复制 `vcrtc-v*.aar`文件到app的libs下](#1-复制-vcrtc-vaar文件到app的libs下)   
+ - [2. 在项目的根目录的`build.gradle`加入以下代码](#2-在项目的根目录的buildgradle加入以下代码)        
+ - [3. 修改app下的`build.gradle`文件](#3-修改app下的buildgradle文件)        
+ - [4. 初始化](#4-初始化)        
+ - [6. 初始化参数设置](#6-初始化参数设置)        
+ - [7. 加入会议（发起呼叫）](#7-加入会议发起呼叫)        
+ - [8. 接收回调信息](#8-接收回调信息)        
+ - [9. 退出会议](#9-退出会议)
 
 ### 快速开始
 
