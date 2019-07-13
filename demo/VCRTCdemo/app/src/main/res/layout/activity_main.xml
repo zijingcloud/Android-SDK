@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activities.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -58,7 +58,7 @@
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:hint="请输入会议号"
-                android:text="1865" />
+                android:text="" />
 
             <TextView
                 android:text="呼叫密码："
@@ -69,7 +69,7 @@
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:hint="请输入密码"
-                android:text="123456" />
+                android:text="" />
 
             <TextView
                 android:text="显示名称："
@@ -108,7 +108,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="点对点呼叫"
+            android:text="点对点外呼"
             android:textColor="#0000FF"/>
 
         <GridLayout
@@ -125,7 +125,7 @@
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:hint="请输入呼叫短号"
-                android:text="5606" />
+                android:text="" />
 
             <TextView
                 android:text="对方名称："
@@ -135,7 +135,7 @@
                 android:id="@+id/et_call_name"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:text="刘英杰" />
+                android:text="" />
 
             <TextView
                 android:text="自己账号："
@@ -146,7 +146,7 @@
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:hint="不设置为匿名呼叫"
-                android:text="lizhipeng@zijingcloud.com" />
+                android:text="" />
 
             <TextView
                 android:text="显示名称："
@@ -157,7 +157,7 @@
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:hint="显示名"
-                android:text="李志鹏" />
+                android:text="android" />
 
         </GridLayout>
 

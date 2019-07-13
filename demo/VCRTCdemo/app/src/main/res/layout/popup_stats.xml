@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/vc_stats_bg">
+
+    <ImageView
+        android:id="@+id/iv_close"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="left"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="25dp"
+        android:src="@mipmap/icon_stats_close"/>
+
+    <LinearLayout
+        android:layout_width="592dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="-5dp">
+
+        <TextView
+            android:layout_width="74dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text=""
+            android:textSize="14sp"
+            android:textColor="@color/vc_text_color"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:text="AudioLowLatency : "
+            android:textSize="14sp"
+            android:textColor="@color/vc_text_color"/>
+
+        <TextView
+            android:id="@+id/tv_audio_low_latency"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textColor="@color/vc_text_color"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:gravity="center"
+            android:text="AudioPro : "
+            android:textSize="14sp"
+            android:textColor="@color/vc_text_color"/>
+
+        <TextView
+            android:id="@+id/tv_audio_pro"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textColor="@color/vc_text_color"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="592dp"
+        android:layout_height="1px"
+        android:background="@color/vc_stats_line"
+        android:layout_gravity="center_horizontal"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="-5dp">
+
+        <TextView
+            android:id="@+id/tv_terminal"
+            android:layout_width="74dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text=""
+            android:textSize="14sp"
+            android:textColor="@color/vc_text_color"/>
+
+        <TextView
+            android:id="@+id/tv_chanel"
+            android:layout_width="74dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="@string/stats_chanel"
+            android:textSize="14sp"
+            android:textColor="@color/vc_text_color"/>
+
+        <TextView
+            android:id="@+id/tv_codec"
+            android:layout_width="74dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="@string/stats_codec"
+            android:textSize="14sp"
+            android:textColor="@color/vc_text_color"/>
+
+        <TextView
+            android:id="@+id/tv_resolution"
+            android:layout_width="74dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="@string/stats_resolution"
+            android:textSize="14sp"
+            android:textColor="@color/vc_text_color"/>
+
+        <TextView
+            android:id="@+id/tv_frame_rate"
+            android:layout_width="74dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="@string/stats_frame_rate"
+            android:textSize="14sp"
+            android:textColor="@color/vc_text_color"/>
+
+        <TextView
+            android:id="@+id/tv_bit_rate"
+            android:layout_width="74dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="@string/stats_bit_rate"
+            android:textSize="14sp"
+            android:textColor="@color/vc_text_color"/>
+
+        <TextView
+            android:id="@+id/tv_jitter"
+            android:layout_width="74dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="@string/stats_jitter"
+            android:textSize="14sp"
+            android:textColor="@color/vc_text_color"/>
+        
+        <TextView
+            android:id="@+id/tv_fraction_lost"
+            android:layout_width="74dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="@string/stats_fraction_lost"
+            android:textSize="14sp"
+            android:textColor="@color/vc_text_color"/>
+
+    </LinearLayout>
+    
+    <View
+        android:layout_width="592dp"
+        android:layout_height="1px"
+        android:background="@color/vc_stats_line"
+        android:layout_gravity="center_horizontal"/>
+
+    <ListView
+        android:id="@+id/lv_stats"
+        android:layout_width="592dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:divider="@color/vc_stats_list_line"
+        android:dividerHeight="1px"/>
+
+</LinearLayout>

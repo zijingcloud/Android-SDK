@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SettingActivity">
+    tools:context=".activities.SettingActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -371,22 +371,6 @@
 
                 <Switch
                     android:id="@+id/s_disable_h264_decoder"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_height="40dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="禁用camera解码器："
-                    android:textSize="18sp"/>
-
-                <Switch
-                    android:id="@+id/s_disable_camera_encoder"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 

@@ -11,8 +11,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-import cn.jpush.android.api.JPushInterface;
-
 public class MyApplication extends Application {
 
     @Override
@@ -21,10 +19,6 @@ public class MyApplication extends Application {
 
         VCRTCPreferences prefs = new VCRTCPreferences(this);
         prefs.setPrintLogs(true);
-
-        //极光推送
-        JPushInterface.setDebugMode(BuildConfig.DEBUG);
-        JPushInterface.init(this);
 
         RTCManager.init(this);
         RTCManager.DEVICE_TYPE = "Android";
