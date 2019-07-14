@@ -70,6 +70,7 @@ public class MyPushReceiver extends BroadcastReceiver {
                 }
                 break;
             case VCSevice.MSG_INCOMING_CANCELLED:
+                Log.i(TAG, "呼叫端撤销了呼叫");
                 finishIncomingView(context);
                 break;
         }

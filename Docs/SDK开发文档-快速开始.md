@@ -140,48 +140,48 @@ private void makeCall(){
 ```java
 VCRTCListener listener = new VCRTCListener() {
 
-   /**
-    * 本地视频回调
-    * @param uuid
-    * @param view
-    */
-   @Override
-   public void onLocalVideo(String uuid, VCRTCView view) {
-       vcrtcView.setMirror(true);
-       flLocal.addView(vcrtcView, FrameLayout.LayoutParams.MATCH_PARENT, 	FrameLayout.LayoutParams.MATCH_PARENT);
-   }
+    /**
+     * 本地视频回调
+     * @param uuid
+     * @param view
+     */
+    @Override
+    public void onLocalVideo(String uuid, VCRTCView view) {
+        vcrtcView.setMirror(true);
+        flLocal.addView(vcrtcView, FrameLayout.LayoutParams.MATCH_PARENT, 	FrameLayout.LayoutParams.MATCH_PARENT);
+    }
 
-   /**
-    * 转发模式下远端视频回调
-    * @param uuid
-    * @param view
-    * @param viewType
-    */
-   @Override
-   public void onAddView(String uuid, VCRTCView view, String viewType) {
-       llRemote.addView(vcrtcView, FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT);
-   }
+    /**
+     * 转发模式下远端视频回调
+     * @param uuid
+     * @param view
+     * @param viewType
+     */
+    @Override
+    public void onAddView(String uuid, VCRTCView view, String viewType) {
+        llRemote.addView(vcrtcView, FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT);
+    }
 
-   /**
-    * 转发远端视频退出
-    * @param s
-    * @param vcrtcView
-    */
-   @Override
-   public void onRemoveView(String uuid, VCRTCView vcrtcView) {
-    	 llRemote.removeView(vcrtcView);
-   }
+    /**
+     * 转发远端视频退出
+     * @param s
+     * @param vcrtcView
+     */
+    @Override
+    public void onRemoveView(String uuid, VCRTCView vcrtcView) {
+        llRemote.removeView(vcrtcView);
+    }
 
-   /**
-    * 被服务器断开
-    * @param reason
-    */
-   @Override
-   public void onDisconnect(String reason) {
-       flLocal.removeAllViews();
-       flRemote.removeAllViews();
-       disconnect();
-   }
+    /**
+     * 被服务器断开
+     * @param reason
+     */
+    @Override
+    public void onDisconnect(String reason) {
+        flLocal.removeAllViews();
+        flRemote.removeAllViews();
+        disconnect();
+    }
 };
 ```
 
