@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rl_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/zj_media_bar_bg">
+
+        <LinearLayout
+            android:id="@+id/ll_stats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp">
+
+            <ImageView
+                android:id="@+id/iv_signal"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/icon_sign_4"/>
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:text="00:00:00"
+                android:textSize="12sp"
+                android:textColor="@color/vc_text_color"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_room_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="0000"
+            android:textSize="14sp"
+            android:textColor="@color/vc_text_color"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/zj_media_bar_bg">
+
+        <ImageView
+            android:id="@+id/iv_mute_audio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:padding="5dp"
+            android:src="@drawable/selector_icon_mic"/>
+
+        <ImageView
+            android:id="@+id/iv_mute_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/iv_mute_audio"
+            android:layout_marginLeft="15dp"
+            android:padding="5dp"
+            android:src="@drawable/selector_icon_camera"/>
+
+        <ImageView
+            android:id="@+id/iv_switch_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/iv_mute_video"
+            android:layout_marginLeft="15dp"
+            android:padding="5dp"
+            android:src="@mipmap/tabbar_btn03"/>
+
+        <ImageView
+            android:id="@+id/iv_audio_model"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/iv_switch_camera"
+            android:layout_marginLeft="15dp"
+            android:padding="5dp"
+            android:src="@drawable/selector_icon_audio"
+            android:visibility="gone"/>
+
+        <ImageView
+            android:id="@+id/iv_hangup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:padding="5dp"
+            android:src="@mipmap/tabbar_btn08" />
+
+        <ImageView
+            android:id="@+id/iv_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/iv_hangup"
+            android:layout_marginRight="15dp"
+            android:padding="5dp"
+            android:src="@mipmap/tabbar_btn07"/>
+
+        <ImageView
+            android:id="@+id/iv_participants"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/iv_more"
+            android:layout_marginRight="15dp"
+            android:padding="5dp"
+
+            android:visibility="gone"
+            android:src="@mipmap/tabbar_btn06"/>
+
+        <TextView
+            android:id="@+id/tv_people_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/iv_more"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="20dp"
+            android:textSize="9sp"
+            android:text="1"
+
+            android:visibility="gone"
+            android:textColor="@color/zj_participants_white"/>
+
+        <ImageView
+            android:id="@+id/iv_share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/iv_participants"
+            android:layout_marginRight="15dp"
+            android:padding="5dp"
+            android:src="@drawable/selector_icon_share"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

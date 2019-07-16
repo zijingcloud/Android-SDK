@@ -1,0 +1,604 @@
+<resources>
+    <string name="app_name">SDKDemo</string>
+
+    <string name="shared_prefs_account_info">account_info</string>
+    <string name="shared_prefs_video_info">video_info</string>
+    <string name="shared_prefs_setting_info">setting_info</string>
+
+    <!--conference start-->
+    <string name="share_whiteboard">白板</string>
+    <string name="more_recording">录制中</string>
+    <string name="more_living">直播中</string>
+    <string name="more_open_record">开启录制</string>
+    <string name="more_close_record">关闭录制</string>
+    <string name="more_open_live">开启直播</string>
+    <string name="more_close_live">关闭直播</string>
+    <string name="more_show_small_view">开启画中画</string>
+    <string name="more_hide_small_view">关闭画中画</string>
+    <string name="more_additional_time">延长会议</string>
+    <string name="participants_close">关闭</string>
+    <string name="participants_people">参会人</string>
+    <string name="participants_all">全部</string>
+    <string name="participants_mute">静音</string>
+    <string name="participants_host">主持人</string>
+    <string name="participants_guest">参会人</string>
+    <string name="participants_sharing">演示中...</string>
+    <string name="participants_calling">呼叫中...</string>
+    <string name="participants_waiting">等待进入...</string>
+    <string name="participants_sure">确定</string>
+    <string name="participants_cancel">取消</string>
+    <string name="participants_allow">允许</string>
+    <string name="participants_refuse">拒绝</string>
+    <string name="participants_invite">邀请</string>
+    <string name="participants_mute_all">全体静音</string>
+    <string name="participants_mute_all_cancel">取消全体静音</string>
+    <string name="participants_lock_conference">锁定会议</string>
+    <string name="participants_lock_conference_cancel">取消锁定会议</string>
+    <string name="participants_disconnect_all">结束会议</string>
+    <string name="participants_conference_has_end">会议已结束</string>
+    <string name="participants_change_name">改名</string>
+    <string name="participants_remove">移除</string>
+    <string name="participants_set_host">设为主持人</string>
+    <string name="participants_set_guest">设为参会者</string>
+    <string name="participants_sure_remove">确定将\"%1$s\"移除？</string>
+    <string name="participants_sure_end_meeting">您确定要结束此次会议吗？</string>
+    <string name="participants_wechat">微信</string>
+    <string name="participants_copy_link">复制链接</string>
+    <string name="participants_contacts">通讯录</string>
+    <string name="toast_mute_all">静音当前访客及后续入会访客</string>
+    <string name="toast_cancel_mute_all">取消全体静音</string>
+    <string name="toast_lock_conference">会议已锁定</string>
+    <string name="toast_slippery">不能再划了</string>
+    <string name="toast_join_mute">静音已开启</string>
+    <string name="permission_tips">提示</string>
+    <string name="permission_message_no_record_audio">麦克风被禁用，请在本机的\"设置\"中允许%1$s访问您的麦克风</string>
+    <string name="permission_message_no_camera">照相机被禁用，请在本机的\"设置\"中允许%1$s访问您的照相机</string>
+    <string name="permission_cancel">取消</string>
+    <string name="permission_go">前往</string>
+    <!--conference end-->
+
+    <!--unlogin page start-->
+    <string name="unlogin_setting">设置</string>
+    <string name="unlogin_join">加入会议</string>
+    <string name="unlogin_has_account">已有账号？</string>
+    <string name="unlogin_login">去登录</string>
+    <!--unlogin page end-->
+
+    <!--history fragment start-->
+    <string name="history_anonymous_number">匿名号码</string>
+    <string name="history_yesterday">昨天</string>
+    <string name="history_anonymous_can_not_call">匿名号码无法呼叫</string>
+    <!--history fragment end-->
+
+    <!--login page start-->
+    <string name="login_title">登录</string>
+    <string name="login_account">账号</string>
+    <string name="login_password">密码</string>
+    <string name="login_login">登  录</string>
+    <string name="login_input_account">请输入账号</string>
+    <string name="login_input_password">请输入密码</string>
+    <string name="login_incorrect_account_or_password">账号或者密码不正确</string>
+    <string name="login_unable_register_server">无法注册到服务器</string>
+    <string name="login_login_ing">登录中</string>
+    <string name="login_forget_password">忘记密码？</string>
+    <string name="login_find">去找回</string>
+    <!--login page end-->
+
+    <!--main page start-->
+    <string name="main_home">主页</string>
+    <string name="main_address_list">通讯录</string>
+    <string name="main_schedule">日程</string>
+    <string name="main_mine">我的</string>
+    <string name="main_mine_yitong">我的</string>
+    <string name="main_no_network">无法连接服务器，请检查网络设置</string>
+    <string name="main_have_not_login">没有登录</string>
+    <string name="main_request_system_alert_window">请求获取悬浮窗权限</string>
+    <string name="main_set_url">未配置服务器地址，请前往配置。</string>
+    <string name="main_cancel">取消</string>
+    <string name="main_go_set_url">前往</string>
+    <string name="main_go_setting">去设置</string>
+    <string name="main_no_camera_permission">无摄像头权限</string>
+    <string name="main_no_audio_permission">无音频权限</string>
+    <string name="main_no_read_external_storage_permission">无读取内存卡权限</string>
+    <string name="main_no_read_phone_state_permission">无读取电话状态权限</string>
+    <string name="main_no_system_alert_window_permission">没有系统弹框权限</string>
+    <string name="main_tips">提示</string>
+    <string name="main_tips_no_new_version">当前版本已是最新版本</string>
+    <string name="main_find_new_version">发现新版本</string>
+    <string name="main_update_now">，马上去更新？</string>
+    <string name="main_update">更新</string>
+    <string name="main_ignore">忽略</string>
+    <string name="main_version_update">版本更新</string>
+    <string name="main_downloading">正在下载中：</string>
+    <string name="main_history">最近呼叫</string>
+    <!--main page end-->
+
+    <!--home page start-->
+    <string name="home_join_meet">加入会议</string>
+    <string name="home_sponsor_meet">发起会议</string>
+    <string name="home_arrange_meet">预约会议</string>
+    <string name="home_manage_meet">主持会议</string>
+    <string name="home_watch_live">观看直播</string>
+    <string name="home_create_live">创建直播</string>
+    <!--home page end-->
+
+    <!--sponsor meet page start-->
+    <string name="sponsor_sponsor_meet">发起会议</string>
+    <string name="sponsor_my_meeting">我的云会议室</string>
+    <string name="sponsor_start_meeting">开始会议</string>
+    <string name="sponsor_meeting_setting">会议室设置</string>
+    <string name="sponsor_share_meet">发送会议邀请</string>
+    <string name="sponsor_wechat_friend">微信好友</string>
+    <string name="sponsor_sms">短信</string>
+    <string name="sponsor_copy_link">复制链接</string>
+    <string name="sponsor_get_link_fail">链接获取失败</string>
+    <string name="sponsor_copy_link_success">链接复制成功！</string>
+    <string name="sponsor_no_meeting">您当前没有私人会议室</string>
+    <!--sponsor meet page end-->
+
+    <!--join meet page start-->
+    <string name="join_join_meet">加入会议</string>
+    <string name="join_input_meet_number">请输入会议号码</string>
+    <string name="join_input_display_name">请输入会议中显示的姓名</string>
+    <string name="join_join">加入</string>
+    <string name="join_mute">入会时静音</string>
+    <string name="join_address_wrong">无效的号码或地址！</string>
+    <string name="join_conference_locked">会议已锁定，不允许入会</string>
+    <string name="join_call_yourself">您呼叫的是自己</string>
+    <string name="join_not_in_network">对方未入网！</string>
+    <string name="join_other_address_wrong">对方账号异常！</string>
+    <string name="join_meet_password">会议密码</string>
+    <string name="join_input_password">请输入密码</string>
+    <string name="join_input_meet_password">请输入会议密码</string>
+    <string name="join_host_password">主持人密码</string>
+    <string name="join_input_host_password">请输入主持人密码</string>
+    <string name="join_password_wrong">密码输入错误</string>
+    <string name="join_tip_login_and_stop_meet">主持人正在召开其他会议，如果您是主持人请先登录并结束正在召开的会议</string>
+    <string name="join_login">登录</string>
+    <string name="join_tip_stop_meet">您有另外一个会议正在进行，如果想开启新会议请点击"结束"按钮结束另外一个会议</string>
+    <string name="join_tip_try_later">主持人正在召开其他会议，请稍后再试！</string>
+    <string name="join_i_know">我知道了</string>
+    <string name="join_end">结束</string>
+    <string name="join_select_role">轻触图标份选择入会身</string>
+    <string name="join_host">我是主持人</string>
+    <string name="join_guest">我是参会人</string>
+    <string name="join_cancel">取消</string>
+    <string name="join_sure">确定</string>
+    <!--join meet page end-->
+
+    <!--call incoming page start-->
+    <string name="incoming_call">正在呼叫您</string>
+    <string name="incoming_refuse">拒绝</string>
+    <string name="incoming_accept">接受</string>
+    <!--call incoming page end-->
+
+    <!--meeting in progress page start-->
+    <string name="meeting_user_not_answer">对方未应答或不可达</string>
+    <string name="meeting_call_end">通话结束</string>
+    <string name="meeting_network_break">网络中断</string>
+    <string name="meeting_please_call_again">请重新呼叫</string>
+    <string name="meeting_sure">确定</string>
+    <string name="meeting_bluetooth_disconnect">蓝牙已断开</string>
+    <string name="meeting_bluetooth_connect">蓝牙已连接</string>
+    <string name="meeting_no_bluetooth_device">获取蓝牙设备超时！</string>
+    <string name="meeting_in_progress">会议进行中</string>
+    <!--meeting in progress page end-->
+
+    <!--manage meet join page start-->
+    <string name="manage_join_manage_meet">主持会议</string>
+    <string name="manage_join_input_meet_number">请输入会议号码</string>
+    <string name="manage_join_input_host_password">请输入主持密码</string>
+    <string name="manage_join_sure">确定</string>
+    <string name="manage_join_password_wrong">密码输入错误</string>
+    <string name="manage_join_address_wrong">无效的号码或地址！</string>
+    <!--manage meet join page end-->
+
+    <!--manage meet page start-->
+    <string name="manage_manage_meet">管理会议</string>
+    <string name="manage_all">全部</string>
+    <string name="manage_mute">静音</string>
+    <string name="manage_record">录制</string>
+    <string name="manage_live">开启直播</string>
+    <string name="manage_mute_all">全体静音</string>
+    <string name="manage_more">更多</string>
+    <string name="manage_no_record">当前会议室暂未开通录制服务</string>
+    <string name="manage_no_living">当前会议室暂未开通直播服务</string>
+    <string name="manage_record_has_start">录制已开启</string>
+    <string name="manage_living_has_start">直播已开启</string>
+    <string name="manage_mute_all_guest">静音当前访客以及后续入会访客</string>
+    <string name="manage_meet_locked">会议已锁定</string>
+    <string name="manage_no_host">主持人未入场\n不能进行该操作</string>
+    <string name="manage_set_host">设为主持人</string>
+    <string name="manage_set_guest">设为访客</string>
+    <string name="manage_input_new_name">请输入新的名称</string>
+    <string name="manage_sure">确定</string>
+    <string name="manage_cancel">取消</string>
+    <string name="manage_host">主持人</string>
+    <string name="manage_guest">访客</string>
+    <string name="manage_wait_for_join">等待进入会议...</string>
+    <string name="manage_inviting">邀请中...</string>
+    <string name="manage_video_layout">视频布局</string>
+    <string name="manage_lock_meet">锁定会议</string>
+    <string name="manage_end_meet">结束会议</string>
+    <string name="manage_layout">布局</string>
+    <string name="manage_host_layout">主持人\n布局</string>
+    <string name="manage_guest_layout">访客\n布局</string>
+    <string name="manage_tips">提示</string>
+    <string name="manage_sure_end_meet">您确定要结束此次会议吗？</string>
+    <string name="manage_change_name">改名</string>
+    <string name="manage_remove">移除</string>
+    <!--manage meet page end-->
+
+    <!--manage meet invite page start-->
+    <string name="manage_invite_select_participants">选择参会人</string>
+    <string name="manage_invite_cancel">取消</string>
+    <string name="manage_invite_sure">确定</string>
+    <string name="manage_invite_search">搜索</string>
+    <string name="manage_invite_busy">忙碌中...</string>
+    <string name="manage_invite_failed">邀请失败</string>
+    <string name="manage_invite_delete">删除</string>
+    <!--manage meet invite page end-->
+
+    <!--arrange meet page start-->
+    <string name="arrange_arrange_meet">预约会议</string>
+    <string name="arrange_submit">提交</string>
+    <string name="arrange_theme_required">主题（必填）</string>
+    <string name="arrange_theme_conference">的会议</string>
+    <string name="arrange_short_intro">会议简介</string>
+    <string name="arrange_optional">(可选)</string>
+    <string name="arrange_start">开始</string>
+    <string name="arrange_end">结束</string>
+    <string name="arrange_invite_participants">参会人</string>
+    <string name="arrange_meetings">会议室</string>
+    <string name="arrange_one_hour">1小时</string>
+    <string name="arrange_zero_people">1人</string>
+    <string name="arrange_hour">小时</string>
+    <string name="arrange_people">人</string>
+    <string name="arrange_auto_invite">自动呼叫与会人</string>
+    <string name="arrange_input_theme">请输入主题</string>
+    <string name="arrange_input_intro">输入会议简介</string>
+    <string name="arrange_choose_start_time">请选择开始时间</string>
+    <string name="arrange_choose_end_time">请选择结束时间</string>
+    <string name="arrange_choose_duration">请选择会议时长</string>
+    <string name="arrange_no_rooms">您选择的时间段没有可用会议室</string>
+    <string name="arrange_begin_must_later_current">开始时间必须大于当前时间</string>
+    <string name="arrange_begin_must_later_current_10">开始时间必须大于当前时间10分钟</string>
+    <string name="arrange_end_must_later_begin">结束时间不能小于等于开始时间</string>
+    <string name="arrange_complete">完成</string>
+    <string name="arrange_result">预约结果</string>
+    <string name="arrange_success">预约成功</string>
+    <string name="arrange_continue">继续预约</string>
+    <string name="arrange_detail">查看详情</string>
+    <string name="arrange_share">发送会议邀请</string>
+    <string name="arrange_plus_one">+1</string>
+    <!--arrange meet page end-->
+
+    <!--create live page start-->
+    <string name="create_create_live">创建直播</string>
+    <string name="create_submit">提交</string>
+    <string name="create_theme_required">主题（必填）</string>
+    <string name="create_short_intro">直播简介</string>
+    <string name="create_optional">(可选)</string>
+    <string name="create_start_time">开始时间</string>
+    <string name="create_duration">直播时长</string>
+    <string name="create_one_hour">1小时</string>
+    <string name="create_limit">观看限制</string>
+    <string name="create_limit0">无限制</string>
+    <string name="create_limit1">密码</string>
+    <string name="create_limit2">付费</string>
+    <string name="create_required">4~10位数字</string>
+    <string name="create_required_yuan">（必填）元</string>
+    <string name="create_input_theme">请输入主题</string>
+    <string name="create_choose_start_time">请选择开始时间</string>
+    <string name="create_choose_duration">请选择直播时长</string>
+    <string name="create_input_password">请输入观看密码</string>
+    <string name="create_input_price">请输入观看价格</string>
+    <string name="create_no_rooms">您选择的时间段没有可用会议室</string>
+    <string name="create_begin_must_later_current">开始时间必须大于当前时间</string>
+    <string name="create_hour">小时</string>
+    <string name="create_minute">分钟</string>
+    <string name="create_complete">完成</string>
+    <string name="create_cancel">取消</string>
+    <string name="create_result">创建结果</string>
+    <string name="create_success">创建成功</string>
+    <string name="create_continue">继续创建</string>
+    <string name="create_detail">查看详情</string>
+    <string name="create_share">分享直播信息</string>
+    <string name="create_plus_one">+1</string>
+    <!--create live page end-->
+
+    <!--watch live page start-->
+    <string name="watch_watch_live">观看直播</string>
+    <string name="watch_input_room_address">请输入房间号码</string>
+    <string name="watch_watch">观看</string>
+    <string name="watch_input_watch_pwd">请输入观看密码</string>
+    <string name="watch_cancel">取消</string>
+    <string name="watch_sure">确定</string>
+    <string name="watch_room_not_living">该会议室没有直播中，请稍后</string>
+    <string name="watch_live_require_payment">当前直播需付费观看，请通过直播链接访问。</string>
+    <string name="watch_address_wrong">无效的号码或地址！</string>
+    <string name="watch_password_wrong">密码输入错误</string>
+    <string name="watch_open_fail">打开失败，请重新尝试</string>
+    <string name="watch_play_fail">无法播放</string>
+    <!--watch live page end-->
+
+    <!--contacts page start-->
+    <string name="contacts_address_list">通讯录</string>
+    <string name="contacts_no_contact">没有相关联系人</string>
+    <string name="contacts_detail">详情</string>
+    <string name="contacts_call">呼 叫</string>
+    <string name="contacts_not_net">未入网</string>
+    <string name="contacts_short_number">短号</string>
+    <string name="contacts_department">部门</string>
+    <string name="contacts_position">职位</string>
+    <!--contacts page end-->
+
+    <!--schedule page start-->
+    <string name="schedule_meet">会议</string>
+    <string name="schedule_live">直播</string>
+    <string name="schedule_no_schedule_meet">暂无会议</string>
+    <string name="schedule_no_schedule_live">暂无直播</string>
+    <string name="schedule_time">时间：</string>
+    <string name="schedule_start_time">开始时间：</string>
+    <string name="schedule_end_time">结束时间：</string>
+    <string name="schedule_year">年</string>
+    <string name="schedule_month">月</string>
+    <string name="schedule_day">日</string>
+    <string name="schedule_am">上午</string>
+    <string name="schedule_pm">下午</string>
+    <string name="schedule_convenor_me">发起人： 我</string>
+    <string name="schedule_convenor">发起人： </string>
+    <string name="schedule_meet_room">会议室： </string>
+    <string name="schedule_meet_detail">会议详情</string>
+    <string name="schedule_meet_share">分享</string>
+    <string name="schedule_meet_more">更多</string>
+    <string name="schedule_meet_introduction">会议介绍</string>
+    <string name="schedule_intro_more">...更多</string>
+    <string name="schedule_intro_hide">...收起</string>
+    <string name="schedule_meet_info">会议室信息</string>
+    <string name="schedule_meet_sipkey">会议室：</string>
+    <string name="schedule_meet_host_pwd">主持密码：</string>
+    <string name="schedule_meet_guest_pwd">参会密码：</string>
+    <string name="schedule_meet_auto_open">自动呼叫：</string>
+    <string name="schedule_join">加 入</string>
+    <string name="schedule_join_meet">加入会议</string>
+    <string name="schedule_join_live">进入直播间</string>
+    <string name="schedule_tips">提示</string>
+    <string name="schedule_cancel_meet">取消会议</string>
+    <string name="schedule_cancel_meet_confirm">您确定要取消此次会议吗？</string>
+    <string name="schedule_cancel">取消</string>
+    <string name="schedule_sure">确定</string>
+    <string name="schedule_meet_not_start">未到预约时间</string>
+    <string name="schedule_meet_end_yet">会议已经结束</string>
+    <string name="schedule_cancel_success">取消成功！</string>
+    <string name="schedule_cancel_failed">取消失败！</string>
+
+    <string name="schedule_live_detail">直播详情</string>
+    <string name="schedule_live_introduction">直播介绍</string>
+    <string name="schedule_limit">观看限制</string>
+    <string name="schedule_live_limit_type">限制方式：</string>
+    <string name="schedule_live_watch_pwd">观看密码：</string>
+    <string name="schedule_live_watch_pwd2">观看密码</string>
+    <string name="schedule_live_watch_price">观看价格：</string>
+    <string name="schedule_live_watch_price2">观看价格</string>
+    <string name="schedule_live_infos">直播间信息</string>
+    <string name="schedule_live_visitor_pwd">嘉宾密码：</string>
+    <string name="warn">提醒</string>
+    <string name="schedule_cancel_live">取消直播</string>
+    <string name="schedule_cancel_live_confirm">您确定要取消此次直播吗？</string>
+    <string name="schedule_live_not_start">未到直播时间</string>
+    <string name="schedule_live_end_yet">直播已经结束</string>
+    <!--schedule page end-->
+
+    <!--mine page start-->
+    <string name="mine_my_meeting">我的会议室</string>
+    <string name="mine_my_meeting_yitong">我的云会议室</string>
+    <string name="mine_my_video">录制空间</string>
+    <string name="mine_setting">设置</string>
+    <string name="mine_about">关于</string>
+    <string name="mine_developer_mode">开发者选项</string>
+    <!--mine page end-->
+
+    <!--me personal page start-->
+    <string name="personal_info">个人信息</string>
+    <string name="personal_name">名字</string>
+    <string name="personal_account">账号</string>
+    <string name="personal_phone">手机号</string>
+    <string name="personal_mailbox">邮箱</string>
+    <string name="personal_update_pwd">修改密码</string>
+    <string name="personal_exit">退出登录</string>
+    <string name="personal_save">保存</string>
+    <string name="personal_current_pwd">旧密码</string>
+    <string name="personal_new_pwd">新密码</string>
+    <string name="personal_confirm_new_pwd">确认新密码</string>
+    <string name="personal_input_current_pwd">请输入旧密码</string>
+    <string name="personal_input_new_pwd">请输入新密码</string>
+    <string name="personal_input_new_pwd_again">请再次输入新密码</string>
+    <string name="personal_error_saved_pwd">旧密码输入错误</string>
+    <string name="personal_new_pwd_not_same">两次输入的新密码不一致</string>
+    <string name="personal_update_success">修改成功，请重新登录</string>
+    <string name="personal_update_failed">修改失败</string>
+    <!--me personal page end-->
+
+    <!--my meeting page start-->
+    <string name="meeting_my_meeting">我的会议室</string>
+    <string name="meeting_my_meeting_yitong">我的会议室</string>
+    <string name="meeting_no_meeting">没有相关会议室</string>
+    <string name="meeting_number">会议室号码 </string>
+    <string name="meeting_volume">容量 </string>
+    <string name="meeting_info">会议室详情</string>
+    <string name="meeting_info_name">会议名称：</string>
+    <string name="meeting_info_num">会议号码：</string>
+    <string name="meeting_info_addr">会议地址：</string>
+    <string name="meeting_info_host_pwd">主持人密码：</string>
+    <string name="meeting_info_guest_pwd">访客密码：</string>
+    <string name="meeting_info_allow_guest">是否允许访客：</string>
+    <string name="meeting_info_create_date">创建时间：</string>
+    <string name="meeting_info_over_date">过期时间：</string>
+    <string name="meeting_info_meet_host">会议管理员：</string>
+    <!--my meeting page end-->
+
+    <!--my video page start-->
+    <string name="video_my_video">录制空间</string>
+    <string name="video_no_videos">没有相关视频</string>
+    <string name="video_play">播放</string>
+    <string name="video_copy_url">复制分享链接</string>
+    <string name="video_cancel">取消</string>
+    <!--my video page end-->
+
+    <!--setting page start-->
+    <string name="setting_setting">设置</string>
+    <string name="setting_display_name">显示姓名</string>
+    <string name="setting_server_url">服务器地址</string>
+    <string name="setting_input_server_url">请输入服务器地址</string>
+    <string name="setting_server_url_null">地址不能为空</string>
+    <string name="setting_same_server">相同服务器地址，请重新设置</string>
+    <string name="setting_set_server_url_success">服务器地址设置成功\n请重新登录</string>
+    <string name="setting_set_server_url_failed">服务器地址设置失败\n请重新输入</string>
+    <string name="setting_restore_default">恢复默认</string>
+    <string name="setting_video_size">清晰度</string>
+    <string name="setting_video_size_liuchang">流畅</string>
+    <string name="setting_video_size_gaoqing">高清</string>
+    <string name="setting_language">语言</string>
+    <string name="setting_chinese">中文</string>
+    <string name="setting_english">English</string>
+    <string name="setting_send_multistream">发送多流</string>
+    <string name="setting_h264_hardware_encode">H.264硬编</string>
+    <string name="setting_h264_hardware_decode">H.264硬解</string>
+    <!--setting page end-->
+
+    <!--about page start-->
+    <string name="about_about">关于</string>
+    <string name="about_version">版本</string>
+    <string name="about_check_update">检查更新</string>
+    <string name="about_instruction">使用手册</string>
+    <string name="about_report">问题反馈</string>
+    <string name="about_have_in_developer_mode">您已处于开发者模式!</string>
+    <string name="about_submit">提交</string>
+    <string name="about_report_tips">请输入您的宝贵意见和建议</string>
+    <!--about page end-->
+
+    <!--developer page start-->
+    <string name="developer_mode">开发者选项</string>
+    <string name="developer_test_url">测试环境</string>
+    <string name="developer_simulcast">多流</string>
+    <!--developer page end-->
+
+    <string name="search_header_search">搜索</string>
+    <string name="loading">加载中</string>
+    <string name="calling">呼叫中</string>
+    <string name="config_success">配置成功</string>
+
+
+    <!--通讯录-->
+    <string name="zongbu">总部</string>
+    <string name="search_hint">搜索用户/终端/部门</string>
+    <string name="department">部门</string>
+    <string name="position">职位</string>
+    <string name="contact_sure">确定</string>
+    <string name="contact_cancel">取消</string>
+    <string name="contact_shutdown">关闭</string>
+    <string name="select_contact">从通讯录中选择</string>
+    <string name="selected_contact">已选择的参会人</string>
+    <string name="meet_personal">个人会议室号</string>
+
+    <!--忘记密码-->
+    <string name="modify_success">修改成功</string>
+    <string name="modify_fail">修改失败</string>
+    <string name="input_code">请输入验证码</string>
+    <string name="input_phonenum">请输入您的手机号</string>
+    <string name="get_code">获取验证码</string>
+    <string name="set_pwd">请设置6至16位登录密码</string>
+    <string name="set_pwd_second">请重新输入密码</string>
+    <string name="check_not">两次输入密码不匹配</string>
+    <string name="find_pwd">找回密码</string>
+    <string name="next_step">下一步</string>
+    <string name="input_new_pwd">请输入新密码</string>
+    <string name="pwd_over_six">密码长度要超过6位</string>
+    <string name="contact_manager">该手机号还未关联用户，请联系管理员找回密码</string>
+    <string name="input_correct">请填写正确的手机号</string>
+    <string name="already_send">已经发送过验证码</string>
+    <string name="contact_phone">当前手机号码绑定了多个账号,请联系管理员处理</string>
+
+
+    <!--日历-->
+    <string name="mon">一</string>
+    <string name="tur">二</string>
+    <string name="wen">三</string>
+    <string name="thr">四</string>
+    <string name="fri">五</string>
+    <string name="sat">六</string>
+    <string name="sun">日</string>
+
+    <!--选择会议室-->
+    <string name="meet_choose">选择会议室</string>
+    <string name="meet_choose_me">选择我的云会议室</string>
+    <string name="meet_choose_common">选择公共云会议室</string>
+    <string name="search_meet">搜索会议室名称或会议室号</string>
+    <string name="meet_name">会议室名称</string>
+    <string name="arrange_theme_live">的直播</string>
+    <string name="arrange_input_intro_live">输入直播简介</string>
+
+    <string name="start_time">开始时间</string>
+    <string name="end_time">结束时间</string>
+    <string name="hostpwd">请填写主持密码</string>
+    <string name="pre_theme">请输入日程、会议、活动等标题</string>
+    <string name="xuantian">选填</string>
+    <string name="bitian4">必填(4~10位数字)</string>
+    <string name="add4">4~10位数字</string>
+
+    <!--微信分享-->
+    <string name="errcode_success">发送成功</string>
+    <string name="errcode_cancel">发送取消</string>
+    <string name="errcode_deny">发送被拒绝</string>
+    <string name="errcode_unsupported">不支持错误</string>
+    <string name="errcode_unknown">发送返回</string>
+
+
+    <!--个人信息-->
+    <string name="username">名称</string>
+    <string name="person_info">个人信息</string>
+    <string name="endpoints_info">终端信息</string>
+
+    <!--修改参会密码-->
+    <string name="add_pwd">参会密码</string>
+    <string name="host_pwd">主持密码</string>
+    <string name="input_add_pwd">请输入参会密码</string>
+    <string name="input_host_pwd">请输入主持密码</string>
+    <string name="role_pwd">密码规则：</string>
+    <string name="role_pwd_1">1、4～10位数字(选填)</string>
+    <string name="role_pwd_0">1、4～10位数字(必填，且不能与参会密码相同)</string>
+    <string name="role_pwd_2">2、参会者需输入密码方可入会</string>
+    <string name="role_pwd_3">2、参会者需输入密码方可主持</string>
+    <string name="pwd_over_four">密码长度要超过6位</string>
+    <string name="pwd_role_error">密码设置格式错误</string>
+    <string name="pwd_error">参会密码不能与主持密码一致</string>
+    <string name="search_none">当前没有符合条件的结果</string>
+
+    <!--会中-->
+    <string name="manage_record_host">开启录制</string>
+    <string name="input_new_name">请输入新的屏幕显示姓名</string>
+    <string name="title_activity_zjshi_tong_p2_p">ZJShiTongP2PActivity</string>
+
+    <string name="read_more">展开 ></string>
+    <string name="read_less">  收起 ></string>
+    <string name="change_phone">更换手机号</string>
+    <string name="change_mail">更换邮箱号</string>
+    <string name="input_new_mail">请输入新的邮箱号</string>
+    <string name="change_phone_notify">此手机号将显示在个人信息中，\n 您也可以使用此手机号登录。</string>
+    <string name="change_mail_notify">此邮箱号将显示在个人信息中，\n 您也可以使用此邮箱号登录。</string>
+    <string name="title_activity_login">Sign in</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+</resources>
+

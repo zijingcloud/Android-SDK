@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="colorA">#ff5e00</color>
+    <color name="colorB">#000000</color>
+    <color name="colorC">#444444</color>
+    <color name="colorD">#808080</color>
+    <color name="colorE">#c4c4c4</color>
+    <color name="colorF">#e1e1e1</color>
+    <color name="colorG">#f3f3f3</color>
+    <color name="colorH">#ffffff</color>
+    <color name="colorI">#ff0000</color>
+    <color name="colorJ">#ffa645</color>
+    <color name="colorK">#3eb5c0</color>
+    <color name="colorL">#96c11f</color>
+
+    <color name="transparent">#00000000</color>
+
+    <color name="main_app_color">#ffcfffff</color>
+    <color name="text_selected">#262030</color>
+    <color name="text_over">#ffb9c4cb</color>
+    <color name="text_default">#ff5b656f</color>
+    <color name="text_disabled">#ffa6b3bf</color>
+    <color name="text_header">#ff7e8e9e</color>
+    <color name="text_switch_selected">#ffffffff</color>
+    <color name="text_switch">#ff41484f</color>
+    <color name="text_button">#ffffffff</color>
+    <color name="text_button_disabled">#ffa6b3bf</color>
+    <color name="text_button_selected">#ff41484f</color>
+    <color name="text_button_over">#ffcf4c29</color>
+    <color name="numpad_background_bottom">#ffe4edf2</color>
+    <color name="numpad_background_dialer">#ffd8d8d8</color>
+    <color name="numpad_background_top">#ffb1bdc3</color>
+    <color name="missed_calls_background">#ffcf4c29</color>
+    <color name="landscape_background">#ffcccccc</color>
+    <color name="text_contrast">#ff000000</color>
+    <color name="menu_button_background">#ff262a2e</color>
+    <color name="zj_blue">#ff4db4dd</color>
+    <color name="blue_bg">#ffcdedf8</color>
+    <color name="zj_gray">#fff2f2f2</color>
+    <color name="zj_black">#ff000000</color>
+    <color name="zj_white">#ffffffff</color>
+    <color name="zj_text">#ffffffff</color>
+    <color name="sochi_gray">#dce4e8</color>
+    <color name="player_progress">#44b5df</color>
+    <color name="colorGreen">#00cd00</color>
+    <color name="colorGreenDark">#008000</color>
+    <color name="green">#13dc7e</color>
+    <color name="bg_nav_half_transparent">#cd282828</color>
+    <color name="toast_bg">#AD000000</color>
+    <color name="state_bg">#39394D</color>
+    <color name="background">#efeff4</color>
+    <color name="options_bg">#B3000000</color>
+    <color name="invite_text">#bcbcbf</color>
+    <color name="invite_bg">#202225</color>
+    <color name="hintTextColor">#C2C2CC</color>
+    <color name="history_darker">#555573</color>
+    <color name="history_red">#E42E2E</color>
+    <color name="history_gray">#A4A4B3</color>
+    <color name="contacts_search_bg">#CDCDD6</color>
+    <color name="text_darker">#5A5A73</color>
+    <color name="schedule_darker">#4b4b66</color>
+    <color name="schedule_gray">#A4A4B2</color>
+    <color name="content_bg">#F2F3F5</color>
+    <color name="share_bg">#878799</color>
+    <color name="book_options">#919199</color>
+    <color name="book_invite_item_n">#8f8fb3</color>
+    <color name="book_invite_item_c">#666680</color>
+    <color name="plus_one">#ff6000</color>
+    <color name="join_invite_text">#00aaff</color>
+    <color name="pop_text">#0099ff</color>
+    <color name="btn_unclick">#CCCCCC</color>
+    <color name="home_botton_text">#888894</color>
+    <color name="history_text">#85858D</color>
+    <color name="meet_number_text">#37DEBD</color>
+    <color name="my_meet_text">#585C68</color>
+    <color name="share_meet_text">#4C4C58</color>
+
+    <!--picture_library color-->
+    <color name="tab_color_true">#1abc9c</color>
+    <color name="color_orange">#1abc9c</color>
+
+    <color name="state_green">#47ccb4</color>
+    <!--<color name="main_color">#1abc9c</color>-->
+    <!--<color name="main_color2">#16a085</color>-->
+    <!--神码颜色-->
+    <!--<color name="state_green">#da6161</color>-->
+    <!--<color name="main_color">#da6161</color>-->
+    <!--<color name="main_color2">#BC5454</color>-->
+
+    <color name="state_blue">#0F8EEC</color>
+    <color name="main_color">#0E8CEE</color>
+    <color name="app_bg">#FFFFFF</color>
+    <color name="launcher_bg">#121A2C</color>
+    <color name="divider_line">#D8D8D8</color>
+    <color name="btn_bg_color">#0E8CEE</color>
+    <color name="btn_bg_shadow_color">#0E8CEE</color>
+    <color name="btn_text_color">#0F8EEC</color>
+    <color name="text_color_blue">#0E8CEE</color>
+    <color name="text_color_111111">#111111</color>
+    <color name="text_color_333333">#333333</color>
+    <color name="text_color_666666">#666666</color>
+    <color name="text_color_999999">#999999</color>
+    <color name="text_color_828383">#828383</color>
+    <color name="text_color_CACACF">#CACACF</color>
+    <color name="color_808080">#808080</color>
+    <color name="color_B2B2B2">#55B2B2B2</color>
+    <color name="color_D9D9D9">#D9D9D9</color>
+    <color name="color_E5E5E5">#E5E5E5</color>
+    <color name="color_F5F5F5">#F5F5F5</color>
+    <color name="color_F2F2F2">#F2F2F2</color>
+    <color name="color_FAFAFA">#FAFAFA</color>
+    <color name="color_EFEFEF">#EFEFEF</color>
+    <color name="color_FF9600">#FF9600</color>
+    <color name="color_0E8CEE">#0E8CEE</color>
+    <color name="color_2C68FF">#2C68FF</color>
+    <color name="color_2FC6B3">#2FC6B3</color>
+    <color name="color_2E2E39">#2E2E39</color>
+    <color name="color_FF605C">#FF605C</color>
+    <color name="shadow_color_CACACA">#CACACA</color>
+    <color name="role_host_bg">#FF9600</color>
+    <color name="role_guest_bg">#2C68FF</color>
+
+    <color name="zj_media_bar_bg">#E6121A2C</color>
+    <color name="zj_participants_pop_bg">#99000000</color>
+    <color name="zj_participants_title_bar_bg">#F9F9F9</color>
+    <color name="zj_participants_line">#CCCCCC</color>
+    <color name="zj_participants_white">#FFFFFF</color>
+    <color name="zj_participants_green_bg">#32C047</color>
+    <color name="zj_participants_red_bg">#FF605C</color>
+    <color name="zj_participants_text_color_blue">#0E8CEE</color>
+    <color name="zj_participants_text_color_red">#FF605C</color>
+    <color name="zj_participants_text_color_black1">#000000</color>
+    <color name="zj_participants_text_color_black2">#111111</color>
+    <color name="zj_participants_text_color_black3">#333333</color>
+
+    <color name="black_overlay">#66000000</color>
+
+    <color name="search_gray">#F5F5F5</color>
+
+    <color name="contact_line">#55999999</color>
+    <color name="contact_blue">#0E8CEE</color>
+    <color name="contact_blue_in">#220E8CEE</color>
+</resources>

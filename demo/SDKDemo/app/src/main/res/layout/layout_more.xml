@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_popup_bg">
+
+    <TextView
+        android:id="@+id/tv_record"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/more_open_record"
+        android:textSize="14sp"
+        android:textColor="@color/vc_text_color"/>
+
+    <View
+        android:id="@+id/line1"
+        android:layout_width="90dp"
+        android:layout_height="1dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/vc_popup_line"/>
+
+    <TextView
+        android:id="@+id/tv_live"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/more_open_live"
+        android:textSize="14sp"
+        android:textColor="@color/vc_text_color"/>
+
+    <View
+        android:id="@+id/line2"
+        android:layout_width="90dp"
+        android:layout_height="1dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/vc_popup_line"/>
+
+    <TextView
+        android:id="@+id/tv_view_in_view"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/more_hide_small_view"
+        android:textSize="14sp"
+        android:textColor="@color/vc_text_color"/>
+
+    <View
+        android:id="@+id/line3"
+        android:layout_width="90dp"
+        android:layout_height="1dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/vc_popup_line"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/tv_additional"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/more_additional_time"
+        android:textSize="14sp"
+        android:textColor="@color/vc_text_color"
+        android:visibility="gone"/>
+
+</LinearLayout>

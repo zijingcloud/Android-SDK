@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/zj_participants_white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_above="@id/view_line"
+        android:orientation="vertical">
+    
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:background="@color/zj_participants_title_bar_bg">
+
+            <TextView
+                android:id="@+id/tv_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:padding="10dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="@string/participants_close"
+                android:textColor="@color/zj_participants_text_color_blue"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/participants_people"
+                android:textColor="@color/zj_participants_text_color_black1"
+                android:textSize="17sp"/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/zj_participants_line"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp">
+
+            <TextView
+                android:id="@+id/tv_all_num"
+                android:layout_width="75dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="35dp"
+                android:gravity="center"
+                android:background="@drawable/selector_text_line"
+                android:text="全部（0）"
+                android:textSize="14sp"
+                android:textColor="@drawable/selector_participants_text_color"/>
+
+            <TextView
+                android:id="@+id/tv_mute_num"
+                android:layout_width="75dp"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@id/tv_all_num"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:background="@drawable/selector_text_line"
+                android:text="静音（0）"
+                android:textSize="14sp"
+                android:textColor="@drawable/selector_participants_text_color"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp"
+                android:animateLayoutChanges="true">
+
+                <ImageView
+                    android:id="@+id/iv_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@mipmap/icon_search"/>
+
+                <LinearLayout
+                    android:id="@+id/ll_search_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:visibility="gone">
+
+                    <EditText
+                        android:id="@+id/et_search"
+                        android:layout_width="380dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:background="@null"
+                        android:imeOptions="flagNoExtractUi"/>
+
+                    <ImageView
+                        android:id="@+id/iv_clear"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="10dp"
+                        android:src="@mipmap/icon_delete"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/zj_participants_line"/>
+
+        <ListView
+            android:id="@+id/lv_participants"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:divider="@null"/>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:background="@color/zj_participants_line"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/zj_participants_white">
+
+        <!--<TextView-->
+            <!--android:id="@+id/tv_invite"-->
+            <!--android:layout_width="70dp"-->
+            <!--android:layout_height="30dp"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_marginLeft="35dp"-->
+            <!--android:gravity="center"-->
+            <!--android:background="@drawable/shape_blue_circle"-->
+            <!--android:text="@string/participants_invite"-->
+            <!--android:textColor="@drawable/selector_participant_text_color"-->
+            <!--android:textSize="14sp"/>-->
+
+        <TextView
+            android:id="@+id/tv_end_meet"
+            android:layout_width="90dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:gravity="center"
+            android:background="@drawable/shape_blue_circle"
+            android:text="@string/participants_disconnect_all"
+            android:textColor="@color/zj_participants_text_color_blue"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:id="@+id/tv_lock_meet"
+            android:layout_width="90dp"
+            android:layout_height="30dp"
+            android:layout_toLeftOf="@id/tv_end_meet"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:background="@drawable/selector_btn_blue_bg"
+            android:text="@string/participants_lock_conference"
+            android:textColor="@drawable/selector_participant_text_color"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:id="@+id/tv_mute_all"
+            android:layout_width="90dp"
+            android:layout_height="30dp"
+            android:layout_toLeftOf="@id/tv_lock_meet"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:background="@drawable/selector_btn_blue_bg"
+            android:text="@string/participants_mute_all"
+            android:textColor="@drawable/selector_participant_text_color"
+            android:textSize="14sp"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
